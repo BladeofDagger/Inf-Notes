@@ -1,0 +1,81 @@
+//
+//  main.cpp
+//  ex_9list_1
+//
+//  Created by Martyna Gruszka on 01.12.2018.
+//  Copyright © 2018 Martyna Gruszka. All rights reserved.
+//Napisz program, który sprawdza czy podany przez użytkownika ciąg znaków jest
+//palindromem (tzn. czytany od końca brzmi tak jak oryginalny ciąg). Np.: kobyła ma
+//mały bok
+
+#include <iostream>
+using namespace std;
+void czyPalindrom(char *z);
+void usuwaniespacji(char *s, char *sbs);
+char seqbezspacji[255]{};
+char sequence[255]{};
+
+int main() {
+    
+    cout << "Wprowadz swoja sekwencje znakow: ";
+    cin.getline(sequence,255);
+    
+    usuwaniespacji(sequence,seqbezspacji);
+    
+    czyPalindrom(seqbezspacji);
+    
+    
+}
+
+void usuwaniespacji(char *s, char *sbs){
+    
+    while (*s != 0){ // iteruje po sequence[]
+        if (*s != ' '){ // sprawdzam czy nie jest spacja
+            *sbs = *s; // dopisuje na poczatek seqbezspacji[]
+            sbs++; // przesuwam sie po seqbezspacji[]
+            
+        
+        }
+        s++;
+    }
+    
+    //cout << seqbezspacji;
+}
+
+
+void czyPalindrom(char *z){
+    
+    
+    int count = 0; // liczy ile liter ma tekst
+    char *control = z; // iteruje po tekscie od poczatku
+    int flag = 0; // kontroluje ilosc powtorzen
+    
+    while (*z != 0){
+        if ( char(*z)>= 65 && char(*z)<=90){
+            *z = char(*z+32); // zmienia wielkosc liter
+        }
+        
+        count++;
+        z++;
+    }
+    
+    for (int i=0;i<count;i++){
+        
+        
+        if (*control++ == *(--z)){
+            flag++;
+            
+        }
+    }
+        
+    
+    
+    if (flag >= (count)/2){
+        cout << "Sekwencja jest palindromem";
+    }
+    else {
+        cout << "Sekwencja NIE jest palindromem";
+    }
+    
+}
+
