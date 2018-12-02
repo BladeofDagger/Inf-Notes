@@ -1,0 +1,31 @@
+//
+//  main.cpp
+//  ex_10list1
+//
+//  Created by Martyna Gruszka on 01.12.2018.
+//  Copyright © 2018 Martyna Gruszka. All rights reserved.
+//Napisz program, który zamienia w podanym przez użytkownika zdaniu słowo
+//kotek na piesek. Np. dla podanego zdania: Ten kotek jest ładny. program wypisze:
+//Ten piesek jest ładny.
+
+#include <iostream>
+using namespace std;
+void zamianaslowa(char *z, char *s1, char *s2);
+char zdanie[] = "jest kotek ładny.";
+char slowo1[]="kotek";
+char slowo2[]="piesek";
+
+int main() {
+//    cout.width(3);
+//    cout << right << "1"<<endl;
+//    cout << left << "1"<<endl; do wyrownywania
+    zamianaslowa(zdanie,slowo1,slowo2);
+}
+
+
+void zamianaslowa(char *z, char *s1, char *s2){
+    int i =0;
+    
+}
+
+
