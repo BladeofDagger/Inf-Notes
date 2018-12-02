@@ -1,0 +1,54 @@
+//
+//  main.cpp
+//  ex_14list_1zamiana liczby na binarna
+//
+//  Created by Martyna Gruszka on 02.12.2018.
+//  Copyright © 2018 Martyna Gruszka. All rights reserved.
+//Napisz program, który zapisuje podaną przez użytkownika liczbę naturalną w
+//postaci binarnej.
+
+#include <iostream>
+
+using namespace std;
+
+
+int liczba{};
+int tablica_reszt[10]{};
+
+void zamiana_na_binary(int liczba, int tablica[]);
+
+int main() {
+    
+    cout<< "Wprowadz liczbe: ";
+    cin >> liczba;
+    
+    zamiana_na_binary(liczba,tablica_reszt);
+
+    
+}
+
+void zamiana_na_binary(int liczba, int tablica[]){
+
+    
+    int i=0;
+    
+    cout << "Binarna postać liczby: "<< liczba << " to: "<< '\t';
+    
+    while (liczba > 0){
+        tablica[i]= (liczba % 2);
+        liczba/=2;
+        
+        i++;
+        
+    }
+    
+    
+    
+    for ( int j = i ; j>-1; j--){
+        cout<< tablica[j];
+        
+    
+    }
+    cout << endl;
+}
+
