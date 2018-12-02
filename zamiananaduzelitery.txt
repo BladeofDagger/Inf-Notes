@@ -1,0 +1,44 @@
+//
+//  main.cpp
+//  ex_8list_1
+//
+//  Created by Martyna Gruszka on 01.12.2018.
+//  Copyright © 2018 Martyna Gruszka. All rights reserved.
+//Napisz program, który wypisuje na ekranie podane przez użytkownika zdanie dużymi
+//literami z pominięciem spacji. Np. dla podanego zadania: Tomek ma 12 lat.
+//program wypisze: TOMEKMA12LAT.
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    char zdanie[255]{};
+    cout << "Wpisz swoje zdanie: ";
+    cin.getline(zdanie,255); // w przypadku cin musi być cin.getline() żeby wczytało ze spacjami
+    int i = 0;
+    //int spacja = 0;
+    
+    // mozna uzyc funkcji isspace(zdanie[i])
+    while (zdanie[i]!='\0'){
+        
+       
+        
+        if (char(zdanie[i])>=97 && char(zdanie[i])<=122 ){
+            zdanie[i]=char(zdanie[i]-32);
+            
+        } else { zdanie[i]=zdanie[i];}
+        
+        if (zdanie[i] != ' '){
+            
+            cout << zdanie[i];
+        }
+        
+        i++;
+
+        
+    
+    }
+    
+    
+}
