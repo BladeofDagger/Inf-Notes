@@ -1,0 +1,38 @@
+//
+//  main.cpp
+//  ex_15list_1tabliczka mnozenia
+//
+//  Created by Martyna Gruszka on 02.12.2018.
+//  Copyright © 2018 Martyna Gruszka. All rights reserved.
+//Napisz program, który wyświetla na ekranie tabliczkę mnożenia o wymiarze zadanym
+//przez użytkownika.
+
+#include <iostream>
+using namespace std;
+void tabliczka_mnozenia(int szerokosc, int wysokosc);
+int wysokosc{};
+int szerokosc{};
+
+int main() {
+    cout << "Wprowadz wysokosc: ";
+    cin >> wysokosc;
+    cout<<endl;
+    cout<< "Wprowadz szerokosc: ";
+    cin >> szerokosc;
+    cout<<endl;
+    tabliczka_mnozenia(szerokosc,wysokosc);
+    
+}
+void tabliczka_mnozenia(int szerokosc, int wysokosc){
+    
+    
+    for (int j=1; j<wysokosc+1; j++){
+        for (int i=1; i<szerokosc+1;i++){
+                cout << i*j<<'\t';
+        }
+        cout<<endl;
+    }
+
+    
+    
+    }
