@@ -1,53 +1,39 @@
 //
 //  main.cpp
-//  ex_11list_1_zlicza ilosc sasiadujacych par znakow
+//  ex_13list_1
 //
 //  Created by Martyna Gruszka on 02.12.2018.
 //  Copyright © 2018 Martyna Gruszka. All rights reserved.
-//Napisz program, który zlicza ilość wystąpień par sąsiadujących ze sobą liter ’o’ w
-//podanym przez użytkownika ciągu.
+//Napisz program, który oblicza sumę cyfr liczby naturalnej podanej przez użytkownika.
 
 #include <iostream>
 using namespace std;
+char liczba[1024]{};
+void suma_cyfr(char *l);
 
-char ciag_znakow[255]{};
-char znak{};
-void ile_razy_wystapil_znak(char *c,char z);
 
 int main() {
     
-    cout << "Wprowadz swoj ciag znakow: ";
-    cin.getline(ciag_znakow,255);
-    cout<<endl;
-    cout<< "Wprowadz znak: ";
-    cin >> znak;
-    ile_razy_wystapil_znak(ciag_znakow,znak);
-
+    cout << "Podaj swoją liczbę: ";
+    cin >> liczba;
+        
     
-    
+    suma_cyfr(liczba);
 }
-void ile_razy_wystapil_znak(char *c,char z){
+
+void suma_cyfr(char *l){
     
-
-
-    int i=0;
-    int ilosc_par=0;
     
-
-    while (*c != 0){
+    int suma=0;
+    
+    while (*l != 0){
         
+        suma+=(*l-'0'); // zamiana char na int
+        l++;
         
-        
-                if (*(c+i)==z && *(c+i+1)==z){
-                    ilosc_par++;
-                    i++; // sprawdzam pary
-                }
-                
-        
-        
-        c++;
     }
-    
-    cout << " Para znaków " << "'" << z <<"'" << " wystąpił " << ilosc_par << " razy " << endl;
+//
+    cout << "Suma cyfr podanej liczby wynosi: " << suma << endl;
 }
 
+//W tabeli ASCII wartość znaku 0 jest równa 48. Następne znaki cyfr do 9 mają wartości po kolei 49, 50, ..., 57. Więc gdy odejmiemy od nich wartość znaku 0 (48) to zostanie nam odpowiednia cyfra.
