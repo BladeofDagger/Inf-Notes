@@ -1,0 +1,55 @@
+//
+//  main.cpp
+//  ex_19list_1
+//
+//  Created by Martyna Gruszka on 02.12.2018.
+//  Copyright © 2018 Martyna Gruszka. All rights reserved.
+//Napisz program testujący czy podana przez użytkownika liczba naturalna jest
+//liczbą pierwszą. Zastanów się, czy napisany przez Ciebie kod można jeszcze zoptymalizować?
+
+#include <iostream>
+using namespace std;
+
+int liczba{};
+int tablica_dzielnikow[255]{};
+
+void czy_liczba_pierwsza(int liczba, int *t);
+
+int main() {
+    
+    cout<< "Podaj swoją liczbę: ";
+    cin >> liczba;
+    czy_liczba_pierwsza(liczba,tablica_dzielnikow);
+    
+    
+    
+}
+
+void czy_liczba_pierwsza(int liczba, int *t){
+    
+    
+    
+    int index=0;// index dla tablicy_dzielników
+    
+    for( int i = 1 ; i < liczba+1; i++ ){
+        
+        if (liczba%i == 0){
+            tablica_dzielnikow[index]=i;
+            index++;
+        }
+      
+    }
+    
+    if (tablica_dzielnikow[0]==1 && tablica_dzielnikow[1]==liczba){
+        
+        cout << "Liczba jest pierwsza"<<endl;
+    }
+    cout << "Dzielniki liczby: " << liczba << " to: "<<endl;
+    for (int i=0; i<index;i++){
+        
+        cout << tablica_dzielnikow[i] << "\t";
+        
+    }
+    cout << endl;
+    
+}
