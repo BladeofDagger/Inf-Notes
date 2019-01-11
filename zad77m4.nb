@@ -1,0 +1,610 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     20883,        601]
+NotebookOptionsPosition[     19278,        540]
+NotebookOutlinePosition[     19642,        556]
+CellTagsIndexPosition[     19599,        553]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["Wprowadzenie wartosci dla masy ziarenek piasku ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox["m", TraditionalForm]]],
+ StyleBox["\" ), powierzchni styku ziaren piasku \nz metalem ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ "S",
+ StyleBox["\" ) i kata jaki tworza wektory predkosci przed i po zderzeniu z \
+normalna do\npowierzchni metalu.",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], ";"}], 
+  TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"m", "=", 
+     RowBox[{"0.2", "\[Times]", 
+      SuperscriptBox["10", 
+       RowBox[{"-", "3"}]]}]}], ";"}], 
+   StyleBox[
+    RowBox[{"         ", 
+     StyleBox[" ",
+      FontColor->GrayLevel[0.666667]]}]], 
+   StyleBox[
+    RowBox[{"(*", " ", "kg", " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"S", "=", 
+     RowBox[{"0.2", "\[Times]", 
+      SuperscriptBox["10", 
+       RowBox[{"-", "6"}]]}]}], ";"}], "            ", 
+   StyleBox[
+    RowBox[{"(*", " ", 
+     SuperscriptBox["m", "2"], " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[Alpha]", "=", "45"}], ";"}], "                           ", 
+   StyleBox[
+    RowBox[{"(*", " ", "deg", " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Wprowadzenie wzorow na skladowe normalne wektorow predkosci przed \
+zderzeniem ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "pn"], TraditionalForm]]],
+ StyleBox["\" )\ni po zderzeniu ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "kn"], TraditionalForm]]],
+ StyleBox["\" ). Symbol \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox["v", TraditionalForm]]],
+ StyleBox["\" oznacza dlugosc wektora predkosci.",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"vpn", "=", 
+    RowBox[{"v", "\[Times]", 
+     RowBox[{"cos", "(", 
+      RowBox[{"\[Alpha]", " ", "\[Degree]"}], ")"}]}]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"vkn", "=", 
+    RowBox[{"0.6", "\[Times]", "v", "\[Times]", 
+     RowBox[{"cos", "(", 
+      RowBox[{"\[Alpha]", " ", "\[Degree]"}], ")"}]}]}], ";"}], 
+  TraditionalForm]}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Obliczenie skladowych normalnych pedu ziarenek piasku przed \
+zderzeniem z metalem \n( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["p", "pn"], TraditionalForm]]],
+ StyleBox["\" ) i po zderzeniu ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["p", "kn"], TraditionalForm]]],
+ StyleBox["\" ) oraz przyrostu  pedu ziarenek ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalDelta]p", "n"], TraditionalForm]]],
+ StyleBox["\" ). ",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"ppn", "=", 
+    RowBox[{
+     RowBox[{"-", "m"}], "\[Times]", "vpn"}]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"pkn", "=", 
+    RowBox[{"m", "\[Times]", "vkn"}]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"\[CapitalDelta]pn", "=", 
+    RowBox[{"pkn", "-", "ppn"}]}], ";"}], TraditionalForm]}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Obliczenie skladowej normalnej ",
+  FontColor->RGBColor[0, 0, 1]],
+ "sily wywieranej przez ziarna na metal ",
+ StyleBox["( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["F", "n"], TraditionalForm]]],
+ StyleBox["\" ). \nSymbol \"\[CapitalDelta]t\" oznacza czas trwania \
+zderzenia.",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"Fn", "=", 
+    FractionBox["\[CapitalDelta]pn", "\[CapitalDelta]t"]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{"MatrixForm", "[", "%", "]"}], TraditionalForm]}], "Input",
+ CellChangeTimes->{{3.7519739535375795`*^9, 3.7519739538191395`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  FractionBox[
+   RowBox[{"0.0002262741699796952`", " ", "v"}], "\[CapitalDelta]t"],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.7519739541469917`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Obliczenie cisnienia wywieranego przez ziarna piasku na \
+powierzchnie metalu ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox["P", TraditionalForm]]],
+ StyleBox["\" )",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[".",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"P", "=", 
+    FractionBox["Fn", "S"]}], ";"}], TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{"MatrixForm", "[", "%", "]"}], TraditionalForm]}], "Input",
+ CellChangeTimes->{{3.7519739502564163`*^9, 3.7519739506470647`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  FractionBox[
+   RowBox[{"1131.3708498984759`", " ", "v"}], "\[CapitalDelta]t"],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.7519739510686817`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sporzadzenie wykresu obrazujacego zaleznosc cisnienia \
+wywieranego przez ziarna piasku na powierzchnie metalu od predkosci ziaren \
+dla czasu zderzenia wynoszacego 0.001 s.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"rys1", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"P", "\[Times]", 
+       SuperscriptBox["10", 
+        RowBox[{"-", "6"}]]}], "/.", 
+      RowBox[{"\[CapitalDelta]t", "\[Rule]", "0.001"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"v", ",", "50", ",", "100"}], "}"}], ",", 
+     RowBox[{"TextStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+        RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}], ",", 
+        RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"PlotLabel", "\[Rule]", 
+      RowBox[{"StyleForm", "[", 
+       RowBox[{"\"\<     \[CapitalDelta]t = 0.001 s    \>\"", ",", 
+        RowBox[{"FontFamily", "\[Rule]", "\"\<Helvetica\>\""}], ",", 
+        RowBox[{"FontSlant", "\[Rule]", "\"\<Plain\>\""}], ",", 
+        RowBox[{"FontWeight", "\[Rule]", "\"\<Bold\>\""}], ",", 
+        RowBox[{"FontSize", "\[Rule]", "12"}]}], "]"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+         {
+          RowBox[{"RGBColor", "[", 
+           RowBox[{"1", ",", "0", ",", "0"}], "]"}], 
+          RowBox[{"Thickness", "[", "0.006", "]"}]}
+        }], "\[NoBreak]", ")"}]}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<v, \!\(\*FractionBox[\(m\), \(s\)]\)\>\"", ",", 
+        "\"\<P,  MPa\>\""}], "}"}]}]}], "]"}]}], TraditionalForm]], "Input",
+ CellChangeTimes->{
+  3.5001989421875*^9, {3.500199082609375*^9, 3.500199120875*^9}, {
+   3.50124233353125*^9, 3.5012423343125*^9}, {3.751973740039926*^9, 
+   3.751973752025059*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {RGBColor[1, 0, 0], Thickness[0.006], LineBox[CompressedData["
+1:eJwVzXlYzHkAx/Hp2tCBrFmyVCKVo1qp5OhDZGbMNPfMd2Z+j81oUKuyq0Jb
+Gw+Va1VbMV3q0UWeyjE6Gfv0iAddrGrL5CjCLt1KM2TtH+/n9efbQRkhUBnT
+aDTO1/5XwE2eQqMx0b26eeodBhspww8Tx4yYULkqT06y2GjJ+NbsvQkT723H
+LL05bLB1mUZd5kx8MsyfcYHPRkBIof7adCbmasPoJ+RsrDlS826XHROijVaO
+gXvYWFTV29qynolGFnttezIbHxb4ZObFMVGjuB/e185Gd1AaWs1YEL51ZBr2
+cvCBmMbqj7Jwo7Dfo4sWiP7NtxyKjbZCfb45v+/3QCwtWva059hW/GBpmfDa
+iQt1bcWKueZs5BTU7r96nQvWxlcZz79+lMLeAR9nHrq1wbtc6By4jY3sdIvk
+IW9oovGnNA563da9mlbHQ/GZDUy/eYHYb7fq3HNzPnRD52SWWYEYLlJty+by
+Mboh4LGczkVJU/6Ldxl88EzzVb65XPheOpHn08NHmDap4bgVDxq7suAQFwHa
+rql7tXwerFm/BadHC1BW0FypSefh/Gz5Ekm9ALnh00VL/uJh3oHwoU9ThKj4
+5WJsD52PqBSPsVyxEJ38wAhbCR+VfsuNF+UKsTiU/T4ri4/2wg5G4T9C9MRG
+2Ou6+XC/dEpQ5yVCVWju/KzvBdjLiNlRFSdCeeqi4vwgAVKz6RVl90W4mVb5
+0TFfAHXCv0bHbcRYlxJG2/1UgK4ZD74zEDGeNcSljToIYeDLdu8qEiOzXT34
+OUgIE1f7P6vfiRFlb9XJLRLibVWGwNRXgvrg4mjlGyEsXs++0JcggdNR1tMh
+JxFsyppNyxslKNNteXgvVAS9s1dOxFwpts7gnV5QKsKdNe2+9O1SyNfH0Tzf
+iNA8cChHWCLFySKTydSlYlyXdfmcHJHi8ev0hj2hYhyR79GV+BL47Yifk1Iu
+hvvMslptEkF9TeQq934xbm9zyq9tIaiclmyeukyCPzilDA5dhsZ0Y5XvXgkw
+rFvapZRBP3HoVFCFBG3LGXR2qQwsNfFrGZGAYadcUz0ug4WHuGTSS4rxK4mO
+df5yvCykOkujpDj1pNem4IQcz/g3z+TVSEGrG1ib0CHHcKfzgpkTUlAenuFs
+OwWiqBq5vzfBIOOIslSlgO2cgoXaGIJg+uFU46sKdJSf1VyvIbgVU3XXb0KB
+OA9Nd3MtQX5twvM4vQKOmtZv3tQRHNYLJ+oMCkTUTJXZagk2xwy6+kwqYH77
+18+/1RM0HnQ57W5CwbvzxwDGA4InB7JFDlYUzpo4/92lIxiLjn9h7EBhXeIm
+o9Fugo5Kjh4LKfRO2e5q9YygdmzerHhHCm7WWbF+Lwjioqs3GRZTuDvH0qHw
+FYFZ9FDJiCuF8eWDIWH9BDZRO8JfelLIvWyZljhAMKrxSFroRcF/pcuNvEGC
+9tEveUHeFJJ9lNaPhgkyI3Me6lZTWOL/+KrXOIF9ZJtn23oKTQ2DT7gfCYw0
+BZxZoLCPYWUWMkHwcuTnnfwNFG5xAqTZBoKSfdbqJn8KqlblIc0ngmPXdJct
+NlOwEMZfbPpMEDpSeo8ZQOFKW/ajvkkCzsqDPUlbKEhJteHLF4IV+7YYGhgU
+/gMYLS/u
+     "]]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+    "\"v, \\!\\(\\*FractionBox[\\(m\\), \\(s\\)]\\)\"", TraditionalForm], 
+    FormBox["\"P,  MPa\"", TraditionalForm]},
+  AxesOrigin->{50., 56.},
+  BaseStyle->{FontFamily -> "Times", FontSlant -> "Italic", FontSize -> 12},
+  PlotLabel->FormBox[
+    TagBox[
+     StyleBox[
+     "\"     \[CapitalDelta]t = 0.001 s    \"", FontFamily -> "Helvetica", 
+      FontSlant -> "Plain", FontWeight -> "Bold", FontSize -> 12], 
+     StyleForm[#, FontFamily -> "Helvetica", FontSlant -> "Plain", FontWeight -> 
+      "Bold", FontSize -> 12]& ], TraditionalForm],
+  PlotRange->{{50, 100}, {56.568543649383834`, 113.13708383538753`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{
+  3.7519615788273277`*^9, {3.751973583107645*^9, 3.751973596030356*^9}, {
+   3.751973729288948*^9, 3.7519737546499367`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sporzadzenie wykresu obrazujacego zaleznosc cisnienia \
+wywieranego przez ziarna piasku na powierzchnie metalu od predkosci ziaren \
+dla czasu zderzenia wynoszacego 0.01 s.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"rys2", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"P", "\[Times]", 
+       SuperscriptBox["10", 
+        RowBox[{"-", "6"}]]}], "/.", 
+      RowBox[{"\[CapitalDelta]t", "\[Rule]", "0.01"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"v", ",", "50", ",", "100"}], "}"}], ",", 
+     RowBox[{"TextStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+        RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}], ",", 
+        RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"PlotLabel", "\[Rule]", 
+      RowBox[{"StyleForm", "[", 
+       RowBox[{"\"\<     \[CapitalDelta]t = 0.01 s    \>\"", ",", 
+        RowBox[{"FontFamily", "\[Rule]", "\"\<Helvetica\>\""}], ",", 
+        RowBox[{"FontSlant", "\[Rule]", "\"\<Plain\>\""}], ",", 
+        RowBox[{"FontWeight", "\[Rule]", "\"\<Bold\>\""}], ",", 
+        RowBox[{"FontSize", "\[Rule]", "12"}]}], "]"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+         {
+          RowBox[{"RGBColor", "[", 
+           RowBox[{"1", ",", "0", ",", "0"}], "]"}], 
+          RowBox[{"Thickness", "[", "0.006", "]"}]}
+        }], "\[NoBreak]", ")"}]}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<v, \!\(\*FractionBox[\(m\), \(s\)]\)\>\"", ",", 
+        "\"\<P,  MPa\>\""}], "}"}]}]}], "]"}]}], TraditionalForm]], "Input",
+ CellChangeTimes->{
+  3.500198944546875*^9, {3.500199147484375*^9, 3.500199151953125*^9}, {
+   3.501242341875*^9, 3.501242342484375*^9}, {3.751973716741563*^9, 
+   3.7519737348833475`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {RGBColor[1, 0, 0], Thickness[0.006], LineBox[CompressedData["
+1:eJwVxX081HcAB/DzNCKsh12ewrnzQ1S8KnolfHpS5/HOOb55WemwSqG12PIQ
+60FSy3OhuBuH0VzKQ12FpYTlqejhwrW5tWyTZ0nEtj/erzdDEOkTqkyj0Tz/
+8/8+3qkaNBobN7KcIwpEdKSNP0l6r8QGN9lrc2ghHZ3Zy9XeqbAxFrtH00ZM
+h0dfrtIrdTZsg0+USEvpcD0o/lily4bErl7eI6HD8ZR0aL8JG+UdTt5adXSw
+bim6Op3ZEGs42X4no2PKeGOuMJ6NrDjHce7SFegPykSXmhvK7hj1ZP+wAlNE
+Ne7jaTf8eopclND0MLyjgVGi5I4Kw6OeZ77Wg3WxjXwg2R2Ni46EDf2jh5w7
+19foq3tAcbJlr+UefbhtfZP9W6oH7H3UqiZl+uivD9lvRfeE26iJVgLPAMKx
+mbZDmZ44rJ/tKH9ogJJLW9guhl5oyBlubXcxRN9Ywe7FeV4wKiq0zbhpiMkt
+rj0BdG84x62/upxpBI6qKHRTvjfSrpWHWuQbIbz+bNM5bQ6GQ2PVdXVX4llV
+jqKey0F8tK362ZSVqCjqqK3O4qCL/0CrTsUY+RG6vhbdHNj8UjnYfMwY14+W
+xQ3QubiXeJIZPGIMGdcr0sCPC/82iX33PhOYh3m8y8vjghnRUNrdb4KBuEjT
+vn4uAkae67Ram+JWWP7KPCMfWITP1mSEmEKSzioRBflAh770AqvQFHWZtR+Y
+Ih/EqPp1iHpN4ZQWTjsg98GuVxrL5pYx8LopPnOSwcPa3ookEy4Duc9zRj8F
+8XCVkfjV6hQGoky1Zd7FPDAyt0eptDDQGFISLRjkYdHQt0m3Vc1AnXaTj1G+
+iEp5qUKczFDRt/NJa5gvZnnWlQ0xZnD/nHPRuNwXasHXWpZUmyHAOZ62ftAX
+R3fnKbYOmeF8scp8ujUf0zGxqzdbMdHzNqvpcBgfygPnFCYCJlyCE/TSJHxQ
+x1JaHguZaJQe22A7zEeX+219gYyJWs1U9XQbP/Rq8sNfLGGhLUs5dNMRP9Cm
+FCPLvVn4OJN4Iei6H8pZIvnmZBbccohL54QfwhO85mwesaBlxy+dt/dHxv1D
+RnPK5vhDHCgrj/KHE7v2pxpHc7zm1l0SSv1BmxsPdjhujnGZpfGSGX+4TQae
+L7ppjqhAacA2B4KJ7g01w3+bw0CvyKw+hqBWTtNRtqTwQnK5ukZKsLBm5ulC
+EIV4u+r+jjsEiS0OnvP7KDCruz4bvEugJIhunhNQiJQu2m1QT6CaPXF3JoSC
++sPYTycaCTRn34knDlBwkO113fWY4Ivmgei3RyhcVrF8+aqPwHpvm0FnIgWn
+pO1Kk/0EP3/QzG7/noJCY98q7dcEazPYum0nKazVyYtz+Z3ArumRSutpCs16
+ixniNwQO1veHGpMpTK8ePRg+TLB1uqa+No1CfuXizKQRggdpkxtr0ilsW2d1
+TzhKsGPVuqqqDAqpGwU6T8cJdn5ZWVqZRcFiW89N+2kCzwflaeU5FNqbRnu9
+PxB0BP6lWZZL4Ztd2moHZwg47y3OlOZRaPB09b8yS8CzKj4uvkohtEuQWD1H
+0NOomCjMp6DFSyhr/0TADzSL+LGAwo1nV57+OU/wYipoUCik4E9uzy4sEJBU
+oaBAROFfVrIk3g==
+     "]]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+    "\"v, \\!\\(\\*FractionBox[\\(m\\), \\(s\\)]\\)\"", TraditionalForm], 
+    FormBox["\"P,  MPa\"", TraditionalForm]},
+  AxesOrigin->{50., 5.6000000000000005`},
+  BaseStyle->{FontFamily -> "Times", FontSlant -> "Italic", FontSize -> 12},
+  ImageSize->{368.79999999999984`, Automatic},
+  PlotLabel->FormBox[
+    TagBox[
+     StyleBox[
+     "\"     \[CapitalDelta]t = 0.01 s    \"", FontFamily -> "Helvetica", 
+      FontSlant -> "Plain", FontWeight -> "Bold", FontSize -> 12], 
+     StyleForm[#, FontFamily -> "Helvetica", FontSlant -> "Plain", FontWeight -> 
+      "Bold", FontSize -> 12]& ], TraditionalForm],
+  PlotRange->{{50, 100}, {5.656854364938384, 11.313708383538753`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{
+  3.751961578921097*^9, {3.751973583154524*^9, 3.751973596061618*^9}, {
+   3.751973729320199*^9, 3.7519737546812*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.7519739338175745`*^9, 3.751973947037187*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  GraphicsBox[{{}, {}, 
+    {RGBColor[1, 0, 0], Thickness[0.006], LineBox[CompressedData["
+1:eJwVxX081HcAB/DzNCKsh12ewrnzQ1S8KnolfHpS5/HOOb55WemwSqG12PIQ
+60FSy3OhuBuH0VzKQ12FpYTlqejhwrW5tWyTZ0nEtj/erzdDEOkTqkyj0Tz/
+8/8+3qkaNBobN7KcIwpEdKSNP0l6r8QGN9lrc2ghHZ3Zy9XeqbAxFrtH00ZM
+h0dfrtIrdTZsg0+USEvpcD0o/lily4bErl7eI6HD8ZR0aL8JG+UdTt5adXSw
+bim6Op3ZEGs42X4no2PKeGOuMJ6NrDjHce7SFegPykSXmhvK7hj1ZP+wAlNE
+Ne7jaTf8eopclND0MLyjgVGi5I4Kw6OeZ77Wg3WxjXwg2R2Ni46EDf2jh5w7
+19foq3tAcbJlr+UefbhtfZP9W6oH7H3UqiZl+uivD9lvRfeE26iJVgLPAMKx
+mbZDmZ44rJ/tKH9ogJJLW9guhl5oyBlubXcxRN9Ywe7FeV4wKiq0zbhpiMkt
+rj0BdG84x62/upxpBI6qKHRTvjfSrpWHWuQbIbz+bNM5bQ6GQ2PVdXVX4llV
+jqKey0F8tK362ZSVqCjqqK3O4qCL/0CrTsUY+RG6vhbdHNj8UjnYfMwY14+W
+xQ3QubiXeJIZPGIMGdcr0sCPC/82iX33PhOYh3m8y8vjghnRUNrdb4KBuEjT
+vn4uAkae67Ram+JWWP7KPCMfWITP1mSEmEKSzioRBflAh770AqvQFHWZtR+Y
+Ih/EqPp1iHpN4ZQWTjsg98GuVxrL5pYx8LopPnOSwcPa3ookEy4Duc9zRj8F
+8XCVkfjV6hQGoky1Zd7FPDAyt0eptDDQGFISLRjkYdHQt0m3Vc1AnXaTj1G+
+iEp5qUKczFDRt/NJa5gvZnnWlQ0xZnD/nHPRuNwXasHXWpZUmyHAOZ62ftAX
+R3fnKbYOmeF8scp8ujUf0zGxqzdbMdHzNqvpcBgfygPnFCYCJlyCE/TSJHxQ
+x1JaHguZaJQe22A7zEeX+219gYyJWs1U9XQbP/Rq8sNfLGGhLUs5dNMRP9Cm
+FCPLvVn4OJN4Iei6H8pZIvnmZBbccohL54QfwhO85mwesaBlxy+dt/dHxv1D
+RnPK5vhDHCgrj/KHE7v2pxpHc7zm1l0SSv1BmxsPdjhujnGZpfGSGX+4TQae
+L7ppjqhAacA2B4KJ7g01w3+bw0CvyKw+hqBWTtNRtqTwQnK5ukZKsLBm5ulC
+EIV4u+r+jjsEiS0OnvP7KDCruz4bvEugJIhunhNQiJQu2m1QT6CaPXF3JoSC
++sPYTycaCTRn34knDlBwkO113fWY4Ivmgei3RyhcVrF8+aqPwHpvm0FnIgWn
+pO1Kk/0EP3/QzG7/noJCY98q7dcEazPYum0nKazVyYtz+Z3ArumRSutpCs16
+ixniNwQO1veHGpMpTK8ePRg+TLB1uqa+No1CfuXizKQRggdpkxtr0ilsW2d1
+TzhKsGPVuqqqDAqpGwU6T8cJdn5ZWVqZRcFiW89N+2kCzwflaeU5FNqbRnu9
+PxB0BP6lWZZL4Ztd2moHZwg47y3OlOZRaPB09b8yS8CzKj4uvkohtEuQWD1H
+0NOomCjMp6DFSyhr/0TADzSL+LGAwo1nV57+OU/wYipoUCik4E9uzy4sEJBU
+oaBAROFfVrIk3g==
+      "]]}},
+   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+   Axes->True,
+   AxesLabel->{
+     FormBox[
+     "\"v, \\!\\(\\*FractionBox[\\(m\\), \\(s\\)]\\)\"", TraditionalForm], 
+     FormBox["\"P,  MPa\"", TraditionalForm]},
+   AxesOrigin->{50., 5.6000000000000005`},
+   BaseStyle->{FontFamily -> "Times", FontSlant -> "Italic", FontSize -> 12},
+   PlotLabel->FormBox[
+     TagBox[
+      StyleBox[
+      "\"     \[CapitalDelta]t = 0.01 s    \"", FontFamily -> "Helvetica", 
+       FontSlant -> "Plain", FontWeight -> "Bold", FontSize -> 12], 
+      StyleForm[#, FontFamily -> "Helvetica", FontSlant -> "Plain", 
+       FontWeight -> "Bold", FontSize -> 12]& ], TraditionalForm],
+   PlotRange->{{50, 100}, {5.656854364938384, 11.313708383538753`}},
+   PlotRangeClipping->True,
+   PlotRangePadding->{
+     Scaled[0.02], 
+     Scaled[0.02]}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.751973942927536*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1904, 1063},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification->1.25,
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 518, 14, 91, "Subsection"],
+Cell[1088, 38, 127, 4, 35, "Input"],
+Cell[1218, 44, 393, 14, 37, "Input"],
+Cell[1614, 60, 334, 11, 37, "Input"],
+Cell[1951, 73, 245, 7, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2233, 85, 663, 21, 72, "Subsection"],
+Cell[2899, 108, 440, 14, 58, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3376, 127, 699, 22, 72, "Subsection"],
+Cell[4078, 151, 439, 15, 80, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4554, 171, 478, 15, 69, "Subsection"],
+Cell[CellGroupData[{
+Cell[5057, 190, 320, 8, 86, "Input"],
+Cell[5380, 200, 215, 6, 71, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5644, 212, 442, 15, 46, "Subsection"],
+Cell[CellGroupData[{
+Cell[6111, 231, 286, 7, 86, "Input"],
+Cell[6400, 240, 212, 6, 72, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6661, 252, 277, 4, 46, "Subsection"],
+Cell[CellGroupData[{
+Cell[6963, 260, 1739, 42, 114, "Input"],
+Cell[8705, 304, 2740, 54, 323, "Output"]
+}, Open  ]],
+Cell[11460, 361, 26, 0, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11523, 366, 276, 4, 46, "Subsection"],
+Cell[CellGroupData[{
+Cell[11824, 374, 1744, 42, 114, "Input"],
+Cell[13571, 418, 2802, 55, 330, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16410, 478, 94, 1, 35, "Input"],
+Cell[16507, 481, 2743, 55, 340, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

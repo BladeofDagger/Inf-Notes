@@ -1,0 +1,316 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      8613,        306]
+NotebookOptionsPosition[      7471,        262]
+NotebookOutlinePosition[      7918,        280]
+CellTagsIndexPosition[      7875,        277]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Wprowadzenie wartosci dla stosunku mas i promieni \
+poszczegolnych cial niebieskich do masy i promienia Ziemi\nw postaci list \
+odpowiednio \"stosmas\" i \"stosprom\".",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], ";"}], 
+  TraditionalForm]], "Input"],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"stosmas", "=", 
+    RowBox[{"{", 
+     RowBox[{
+     "318.35", ",", "95.22", ",", "331832.6", ",", "0.0123", ",", "0.55"}], 
+     "}"}]}], ";"}], TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"stosprom", "=", 
+    RowBox[{"{", 
+     RowBox[{"11.27", ",", "9.47", ",", "109.13", ",", "0.27", ",", "0.38"}], 
+     "}"}]}], ";"}], TraditionalForm]}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Wypisanie wzorow na ciezar czlowieka na danym ciele niebieskim \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["Q", "cn"], TraditionalForm]]],
+ StyleBox["\" i na Ziemi \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["Q", "Z"], TraditionalForm]]],
+ StyleBox["\". \"",
+  FontColor->RGBColor[0, 0, 1]],
+ "G",
+ StyleBox["\" - stala grawitacyjna,\n\"m\" - masa czlowieka, \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["M", "cn"], TraditionalForm]]],
+ ",",
+ StyleBox[" ",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["R", "cn"], TraditionalForm]]],
+ StyleBox["\" - masa i promien ciala niebieskigo, \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["M", "Z"], TraditionalForm]]],
+ ",",
+ StyleBox[" ",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["R", "Z"], TraditionalForm]]],
+ StyleBox["\" - masa i promien Ziemi.",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"Qcn", "=", 
+    RowBox[{"G", 
+     FractionBox[
+      RowBox[{"m", "\[Times]", "Mcn"}], 
+      SuperscriptBox["Rcn", "2"]]}]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"Qz", "=", 
+    RowBox[{"G", 
+     FractionBox[
+      RowBox[{"m", "\[Times]", "Mz"}], 
+      SuperscriptBox["Rz", "2"]]}]}], ";"}], TraditionalForm]}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Obliczenie stosunku ciezaru czlowieka na danym ciele niebieskim do \
+ciezaru czlowieka na Ziemi (funkcja \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["Q", "cnz"], "[", "i_", "]"}], TraditionalForm]]],
+ StyleBox["\")\nprzy podstawieniu za stosunek mas i promieni elementow \
+odpowiednio list \"stosmas\" i \"stosprom\".",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"Qcnz", "[", "i_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{
+     FractionBox["Qcn", "Qz"], "/.", " ", 
+     RowBox[{
+      FractionBox["Mcn", "Mz"], "\[Rule]", 
+      RowBox[{"stosmas", "[", 
+       RowBox[{"[", "i", "]"}], "]"}]}]}], "/.", 
+    RowBox[{
+     FractionBox[
+      SuperscriptBox["Rz", "2"], 
+      SuperscriptBox["Rcn", "2"]], "\[Rule]", 
+     SuperscriptBox[
+      RowBox[{"stosprom", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], 
+      RowBox[{"-", "2"}]]}]}]}], TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Sporzadzenie tabeli koncowej \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["Q", "table"], TraditionalForm]]],
+ StyleBox["\" z wynikami obliczen dla poszczegolnych cial niebieskich.",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"Qtable", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Qcnz", "[", "i", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "5"}], "}"}]}], "]"}]}], 
+  TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "2.506438322406622`", ",", "1.0617645451818614`", ",", 
+   "27.863183779470074`", ",", "0.16872427983539093`", ",", 
+   "3.808864265927978`"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.620567625322571*^9, 3.6205676722318525`*^9, {3.6205677156779284`*^9, 
+   3.620567723368742*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Wprowadzenie listy \"stosciezar\"z nazwami stosuku \
+ciezaru dla poszczegolnych cial niebieskich.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Qz", "=."}], ";"}]], "Input",
+ CellChangeTimes->{{3.620567713150724*^9, 3.6205677213563385`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"stosciezar", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      FractionBox[
+       SubscriptBox["Q", "J"], "Qz"], ",", 
+      FractionBox[
+       SubscriptBox["Q", "Sat"], "Qz"], ",", 
+      FractionBox[
+       SubscriptBox["Q", "Sun"], "Qz"], ",", 
+      FractionBox[
+       SubscriptBox["Q", "Moon"], "Qz"], ",", 
+      FractionBox[
+       SubscriptBox["Q", "Mer"], "Qz"]}], "}"}]}], ";"}], 
+  TraditionalForm]], "Input",
+ CellChangeTimes->{{3.620567644229804*^9, 3.6205676697358484`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Wypisanie wartosci  stosunku ciezaru czlowieka na \
+danym ciele niebieskim do ciezaru czlowieka na Ziemi.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"Do", "[", "   ", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"StyleForm", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"StringForm", "[", 
+        RowBox[{"\"\<     `` = ``  \>\"", ",", 
+         RowBox[{"stosciezar", "[", 
+          RowBox[{"[", "i", "]"}], "]"}], ",", " ", 
+         RowBox[{"Qtable", "[", 
+          RowBox[{"[", "i", "]"}], "]"}]}], " ", "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+       RowBox[{"FontSize", "\[Rule]", "16"}], ",", 
+       RowBox[{"FontWeight", "\[Rule]", "\"\<Bold\>\""}], ",", 
+       RowBox[{"FontSlant", "\[Rule]", "\"\<Plain\>\""}], ",", 
+       RowBox[{"FontColor", "\[Rule]", 
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"1", ",", "0", ",", "0"}], "]"}]}]}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", "5"}], "}"}]}], "]"}], 
+  TraditionalForm]], "Input"]
+}, Open  ]]
+},
+WindowSize->{1264, 889},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+DockedCells->FEPrivate`FrontEndResource[
+ "FEExpressions", "CompatibilityToolbar"],
+Magnification->1.25,
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 325, 6, 69, "Subsection"],
+Cell[907, 30, 127, 4, 35, "Input"],
+Cell[1037, 36, 432, 13, 58, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1506, 54, 1160, 41, 69, "Subsection"],
+Cell[2669, 97, 421, 15, 116, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3127, 117, 530, 14, 69, "Subsection"],
+Cell[3660, 133, 551, 18, 69, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4248, 156, 378, 11, 46, "Subsection"],
+Cell[CellGroupData[{
+Cell[4651, 171, 241, 8, 35, "Input"],
+Cell[4895, 181, 324, 8, 35, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5268, 195, 255, 5, 46, "Subsection"],
+Cell[5526, 202, 132, 3, 35, "Input"],
+Cell[5661, 207, 532, 17, 65, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6230, 229, 263, 5, 46, "Subsection"],
+Cell[6496, 236, 959, 23, 80, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

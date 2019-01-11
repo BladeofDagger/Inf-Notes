@@ -1,0 +1,436 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     12543,        426]
+NotebookOptionsPosition[     11052,        370]
+NotebookOutlinePosition[     11499,        388]
+CellTagsIndexPosition[     11456,        385]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["Wprowadzenie wartosci dla stalej grawitacyjnej \"G\" i masy Ziemi ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["M", "Z"], TraditionalForm]]],
+ StyleBox["\".",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], ";"}], 
+  TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"G", "=", 
+     RowBox[{"6.67", "\[Times]", 
+      SuperscriptBox["10", 
+       RowBox[{"-", "11"}]]}]}], ";"}], "      ", 
+   StyleBox[
+    RowBox[{"(*", " ", 
+     FractionBox[
+      RowBox[{"N", " ", 
+       SuperscriptBox["m", "2"]}], 
+      RowBox[{
+       SuperscriptBox["kg", "2"], " "}]], " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"Mz", "=", 
+     RowBox[{"5.96", "\[Times]", 
+      SuperscriptBox["10", "24"]}]}], ";"}], "      ", 
+   StyleBox[
+    RowBox[{"(*", " ", "kg", " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Wypisanie wzorow na sile grawitacji \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["F", "G"], TraditionalForm]]],
+ StyleBox["\" i sile odsrodkowa \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["F", "od"], TraditionalForm]]],
+ StyleBox["\"dzialajace na satelite o masie \"m\" poruszajacego sie \npo \
+orbicie o promieniu \"R\" z predkoscia liniowa \"v\".",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"FG", "=", 
+    RowBox[{"G", "\[Times]", 
+     FractionBox[
+      RowBox[{"m", "\[Times]", "Mz"}], 
+      SuperscriptBox["R", "2"]]}]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"Fod", "=", 
+    FractionBox[
+     RowBox[{"m", "\[Times]", 
+      SuperscriptBox["v", "2"]}], "R"]}], ";"}], TraditionalForm]}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Obliczenie predkosci liniowej satelity.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"r1", "=", 
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"FG", "\[Equal]", "Fod"}], ",", "v"}], "]"}]}], 
+  TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"v", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["1.9938204533006478`*^7", 
+        SqrtBox["R"]]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"v", "\[Rule]", 
+      FractionBox["1.9938204533006478`*^7", 
+       SqrtBox["R"]]}], "}"}]}], "}"}], TraditionalForm]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Zdefiniwanie funkcji predkosci liniowej zaleznej od \
+promienia orbity \"v[R_]\".",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"v", "[", "R_", "]"}], "=", 
+    RowBox[{"v", "/.", 
+     RowBox[{"r1", "[", 
+      RowBox[{"[", 
+       RowBox[{"2", ",", "1"}], "]"}], "]"}]}]}], ";"}], 
+  TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Obliczenie okresu obiegu satelity poruszajacego sie \
+po orbicie opromieniu \"R\". .",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"T", "[", "R_", "]"}], "=", 
+    FractionBox[
+     RowBox[{"2", "\[Times]", "\[Pi]", "\[Times]", "R"}], 
+     RowBox[{"v", "[", "R", "]"}]]}], ";"}], TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sporzadzenie wykresu obrazujacego zaleznosc  \
+predkosci   liniowej satelity od promienia orbity.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{"v", "[", 
+     RowBox[{"R", "\[Times]", 
+      SuperscriptBox["10", "6"]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"R", ",", "6.370", ",", 
+      RowBox[{"3.84", "\[Times]", 
+       SuperscriptBox["10", "2"]}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"TextStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+       RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}], ",", 
+       RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+    "\[IndentingNewLine]", " ", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+        RowBox[{"Thickness", "[", "0.006", "]"}]}], "}"}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<R  [\!\(\*SuperscriptBox[\(10\), \(\(\\\ \)\(3\)\(\\\ \)\)]\)km]\>\
+\"", ",", "\"\<v [ \!\(\*FractionBox[\(m\), \(s\)]\)]\>\""}], "}"}]}]}], 
+   "]"}], TraditionalForm]], "Input",
+ CellChangeTimes->{3.6205677878904543`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sporzadzenie wykresu obrazujacego zaleznosc  \
+predkosci   liniowej satelity od promienia orbity dla \"R\" \nzmieniajacego \
+sie od 6370 km do 50000 km.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{"v", "[", 
+     RowBox[{"R", "\[Times]", 
+      SuperscriptBox["10", "6"]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"R", ",", "6.370", ",", 
+      RowBox[{"3.84", "\[Times]", 
+       SuperscriptBox["10", "2"]}]}], "}"}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"6.370", ",", "50.000"}], "}"}], ",", "Automatic"}], "}"}]}], 
+    ",", "\[IndentingNewLine]", 
+    RowBox[{"TextStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+       RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}], ",", 
+       RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+    "\[IndentingNewLine]", " ", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+        RowBox[{"Thickness", "[", "0.006", "]"}]}], "}"}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<R  [\!\(\*SuperscriptBox[\(10\), \(\(\\\ \)\(3\)\(\\\ \)\)]\)km]\>\
+\"", ",", "\"\<v [ \!\(\*FractionBox[\(m\), \(s\)]\)]\>\""}], "}"}]}]}], 
+   "]"}], TraditionalForm]], "Input",
+ CellChangeTimes->{3.620567790698459*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sporzadzenie wykresu obrazujacego zaleznosc  okresu \
+obiegu satelity od promienia orbity.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"T", "[", 
+      RowBox[{"R", "\[Times]", 
+       SuperscriptBox["10", "6"]}], "]"}], "3600"], ",", 
+    RowBox[{"{", 
+     RowBox[{"R", ",", "6.370", ",", 
+      RowBox[{"3.84", "\[Times]", 
+       SuperscriptBox["10", "2"]}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"TextStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+       RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}], ",", 
+       RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+    "\[IndentingNewLine]", " ", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+        RowBox[{"Thickness", "[", "0.006", "]"}]}], "}"}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<R [\!\(\*SuperscriptBox[\(10\), \(\(\\\ \)\(3\)\(\\\ \
+\)\)]\)km]\>\"", ",", "\"\<T [ h]\>\""}], "}"}]}]}], "]"}], 
+  TraditionalForm]], "Input",
+ CellChangeTimes->{3.620567793662464*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sporzadzenie wykresu obrazujacego zaleznosc  okresu \
+obiegu  satelity od promienia orbity dla \"R\" \nzmieniajacego sie od 6370 km \
+do 50000 km.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"T", "[", 
+      RowBox[{"R", "\[Times]", 
+       SuperscriptBox["10", "6"]}], "]"}], "3600"], ",", 
+    RowBox[{"{", 
+     RowBox[{"R", ",", "6.370", ",", 
+      RowBox[{"3.84", "\[Times]", 
+       SuperscriptBox["10", "2"]}]}], "}"}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"6.370", ",", "50.000"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "50"}], "}"}]}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"TextStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+       RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}], ",", 
+       RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+    "\[IndentingNewLine]", " ", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+        RowBox[{"Thickness", "[", "0.006", "]"}]}], "}"}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<R [\!\(\*SuperscriptBox[\(10\), \(\(\\\ \)\(3\)\(\\\ \
+\)\)]\)km]\>\"", ",", "\"\<T [ h]\>\""}], "}"}]}]}], "]"}], 
+  TraditionalForm]], "Input",
+ CellChangeTimes->{3.6205677960024686`*^9}]
+}, Open  ]]
+},
+WindowSize->{1264, 889},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+DockedCells->FEPrivate`FrontEndResource[
+ "FEExpressions", "CompatibilityToolbar"],
+Magnification->1.25,
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 402, 13, 46, "Subsection"],
+Cell[984, 37, 127, 4, 35, "Input"],
+Cell[1114, 43, 435, 15, 55, "Input"],
+Cell[1552, 60, 282, 9, 37, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1871, 74, 583, 17, 69, "Subsection"],
+Cell[2457, 93, 406, 14, 119, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2900, 112, 197, 4, 46, "Subsection"],
+Cell[CellGroupData[{
+Cell[3122, 120, 176, 6, 35, "Input"],
+Cell[3301, 128, 367, 12, 63, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3717, 146, 239, 5, 46, "Subsection"],
+Cell[3959, 153, 244, 9, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4240, 167, 242, 5, 46, "Subsection"],
+Cell[4485, 174, 236, 7, 65, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4758, 186, 201, 3, 46, "Subsection"],
+Cell[4962, 191, 1214, 32, 136, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6213, 228, 256, 4, 69, "Subsection"],
+Cell[6472, 234, 1393, 38, 136, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7902, 277, 194, 3, 46, "Subsection"],
+Cell[8099, 282, 1207, 33, 146, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9343, 320, 250, 4, 69, "Subsection"],
+Cell[9596, 326, 1440, 41, 146, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

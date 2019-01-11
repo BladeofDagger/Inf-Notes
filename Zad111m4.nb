@@ -1,0 +1,214 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5749,        204]
+NotebookOptionsPosition[      4980,        173]
+NotebookOutlinePosition[      5427,        191]
+CellTagsIndexPosition[      5384,        188]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["Wprowadzenie wzorow na sile odsrodkowa \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["F", "od"], TraditionalForm]],
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\"  i sile grawitacji \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["F", "g"], TraditionalForm]],
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\".",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\n",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection"],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"Fod", "=", 
+    FractionBox[
+     RowBox[{"m", "\[Times]", 
+      SuperscriptBox["v", "2"]}], "R"]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"Fg", "=", 
+    RowBox[{"m", "\[Times]", "g"}]}], ";"}], TraditionalForm]}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Wprowadzenie wzorow na energie potencjalne wozka w punkcie startu \
+\"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["E", "p1"], TraditionalForm]],
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\"  i w najwyzszym punkcie petli \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["E", "p2"], TraditionalForm]],
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\" \noraz na energie kinetyczna wozka w najwyzszym punkcie petli \
+\"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["E", "k2"], TraditionalForm]],
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\". Symbol \"m\" oznacza mase wozka wraz z pasazerami, \"g\" - \
+przyspieszenie ziemskie, \"v\" - predkosc wozka.",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\n",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection"],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"Ep1", "=", 
+    RowBox[{"m", "\[Times]", "g", "\[Times]", "H"}]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"Ep2", "=", 
+    RowBox[{"m", "\[Times]", "g", "\[Times]", 
+     RowBox[{"(", 
+      RowBox[{"2", "\[Times]", "R"}], ")"}]}]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"Ek2", "=", 
+    FractionBox[
+     RowBox[{"m", "\[Times]", 
+      SuperscriptBox["v", "2"]}], "2"]}], ";"}], TraditionalForm]}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Rozwiazanie ukladu rownan bedacych matematycznym zapisem rownosci \
+sily odsrodkowej i sily przyciagania ziemskiego w najwyzszym punkcie petli \
+oraz zasady zachowania energii.",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\n",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"r1", "=", 
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Fod", "==", "Fg"}], ",", " ", 
+       RowBox[{
+        RowBox[{"Ep1", "-", "Ep2"}], "==", "Ek2"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"H", ",", "v"}], "}"}]}], "]"}]}], TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sporzadzenie wykresu obrazujacego zaleznosc  \
+wymaganej wysokosci zjezdzalni \"H\" od promienia petli \"R\".",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{"H", "/.", 
+     RowBox[{"r1", "[", 
+      RowBox[{"[", 
+       RowBox[{"1", ",", "1"}], "]"}], "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"R", ",", "5", ",", "10"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"TextStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+       RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}], ",", 
+       RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+    "\[IndentingNewLine]", " ", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+        RowBox[{"Thickness", "[", "0.006", "]"}]}], "}"}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<R [m]\>\"", ",", "\"\<H [m]\>\""}], "}"}]}]}], "]"}], 
+  TraditionalForm]], "Input",
+ CellChangeTimes->{3.620567261217936*^9}]
+}, Open  ]]
+},
+WindowSize->{1264, 889},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+DockedCells->FEPrivate`FrontEndResource[
+ "FEExpressions", "CompatibilityToolbar"],
+Magnification->1.25,
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 501, 17, 72, "Subsection"],
+Cell[1083, 41, 447, 15, 114, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1567, 61, 874, 26, 116, "Subsection"],
+Cell[2444, 89, 549, 18, 111, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3030, 112, 304, 7, 91, "Subsection"],
+Cell[3337, 121, 344, 11, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3718, 137, 182, 2, 46, "Subsection"],
+Cell[3903, 141, 1061, 29, 102, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

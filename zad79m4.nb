@@ -1,0 +1,487 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     13901,        478]
+NotebookOptionsPosition[     12401,        422]
+NotebookOutlinePosition[     12850,        440]
+CellTagsIndexPosition[     12807,        437]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["Wprowadzenie wartosci dla kata okreslajacego nachylenie wektora \
+predkosci poczatkowej\nrakiety do poziomu ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox["\[Alpha]", TraditionalForm]]],
+ StyleBox["\" ), masy rakiety ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox["m", TraditionalForm]]],
+ StyleBox["\" ) i przyspieszenia ziemskiego ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ "g",
+ StyleBox["\" ).",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], ";"}], 
+  TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[Alpha]", "=", "45"}], ";"}], "             ", 
+   StyleBox[
+    RowBox[{"(*", " ", "deg", " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"g", "=", "9.81"}], ";"}], "         ", 
+   StyleBox[
+    RowBox[{"(*", " ", 
+     FractionBox[
+      StyleBox["m",
+       FontColor->GrayLevel[0.666667]], 
+      SuperscriptBox["s", "2"]], " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Obliczenie skladowej poziomej wektora predkosci poczatkowej ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "x"], TraditionalForm]]],
+ StyleBox["\" ). Symbol  \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "o"], TraditionalForm]]],
+ StyleBox["\" \noznacza szybkosc poczatkowa rakiety.",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"vx", "=", 
+    RowBox[{"vo", "\[Times]", 
+     RowBox[{"cos", "(", 
+      RowBox[{"\[Alpha]", " ", "\[Degree]"}], ")"}]}]}], ";"}], 
+  TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Wprowadzenie wzorow na mase dwoch czlonow rakiety ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["m", "1"], TraditionalForm]]],
+ StyleBox["\", \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["m", "2"], TraditionalForm]]],
+ StyleBox["\" ).",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"m1", "=", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "-", "x"}], ")"}], "\[Times]", "m"}]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"m2", "=", 
+    RowBox[{"x", "\[Times]", "m"}]}], ";"}], TraditionalForm]}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Wprowadzenie wzorow na ped rakiety przed rozlaczeniem ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["p", "p"], TraditionalForm]]],
+ StyleBox["\" ) oraz na pedy dwoch \nczlonow rakiety powstajacych po jej \
+rozlaczeniu ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["p", "1"], TraditionalForm]]],
+ StyleBox["\", \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["p", "2"], TraditionalForm]]],
+ StyleBox["\" ). Symbole \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "1"], TraditionalForm]]],
+ StyleBox["\" i \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "2"], TraditionalForm]]],
+ StyleBox["\" \noznaczaja predkosci poszczegolnych fragmentow rakiety.",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"pp", "=", 
+    RowBox[{"m", "\[Times]", "vx"}]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"p1", "=", 
+    RowBox[{
+     RowBox[{"-", "m1"}], "\[Times]", "v1"}]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"p2", "=", 
+    RowBox[{"m2", "\[Times]", "v2"}]}], ";"}], TraditionalForm]}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Wykorzystanie zasady zachowania pedu do obliczenia predkosci \
+czlonu rakiety, ktorego \nzasieg nalezy wyznaczyc ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "2"], TraditionalForm]]],
+ StyleBox["\" ).",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"A", "=", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{"{", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"p1", "+", "p2"}], "==", "pp"}], ",", 
+        RowBox[{"v1", "==", "vx"}]}], "}"}], ",", "v2", ",", "v1"}], "]"}]}], 
+   ";"}], TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "bdomv"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Warning: \[NoBreak]\\!\\(v1\\)\[NoBreak] is not a valid \
+domain specification. Mathematica is assuming it is a variable to eliminate. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/Solve\\\", ButtonNote -> \
+\\\"Solve::bdomv\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.563214174391588*^9, 3.563214226891588*^9, 
+  3.563214284860338*^9, 3.5632246235947127`*^9, 3.5632247171259627`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Wprowadzenie wzorow na zasieg ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["z", "uk"], TraditionalForm]]],
+ StyleBox["\" ) i maksymalna wysokosc ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["h", "uk"], TraditionalForm]]],
+ StyleBox["\" ) ciala w rzucie \nukosnym oraz na zasieg  ciala w rzucie \
+poziomym ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["z", "poz"], TraditionalForm]]],
+ StyleBox["\" ).",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"zuk", "=", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["vo", "2"], "\[Times]", 
+      RowBox[{"sin", "(", 
+       RowBox[{"2", "\[Times]", "\[Alpha]", " ", "\[Degree]"}], ")"}]}], 
+     "g"]}], ";"}], TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"huk", "=", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["vo", "2"], "\[Times]", 
+      RowBox[{
+       SuperscriptBox["sin", "2"], "(", 
+       RowBox[{"\[Alpha]", " ", "\[Degree]"}], ")"}]}], 
+     RowBox[{"2", "\[Times]", "g"}]]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"zpoz", "=", 
+    RowBox[{
+     RowBox[{"v2", "\[Times]", 
+      SqrtBox[
+       FractionBox[
+        RowBox[{"2", "\[Times]", "huk"}], "g"]]}], "/.", "A"}]}], ";"}], 
+  TraditionalForm]}], "Input",
+ CellChangeTimes->{{3.5632142726259627`*^9, 3.5632142781572127`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Obliczenie zasiegu drugiego czlonu rakiety ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox["s", TraditionalForm]]],
+ StyleBox["\" ).",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"s", "=", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], "\[Times]", "zuk"}], "+", "zpoz"}]}], ";"}], 
+  TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sporzadzenie wykresu obrazujacego zaleznosc zasiegu \
+drugiego czlonu rakiety\nod szybkosci poczatkowej rakiety dla x = 0.2.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"rys1", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"s", "\[Times]", 
+       SuperscriptBox["10", 
+        RowBox[{"-", "3"}]]}], "/.", 
+      RowBox[{"x", "\[Rule]", "0.2"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"vo", ",", "100", ",", "200"}], "}"}], ",", 
+     RowBox[{"BaseStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+        RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}], ",", 
+        RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"PlotLabel", "\[Rule]", 
+      RowBox[{"StyleForm", "[", 
+       RowBox[{"\"\<     x = 0.2  \>\"", ",", 
+        RowBox[{"FontFamily", "\[Rule]", "\"\<Helvetica\>\""}], ",", 
+        RowBox[{"FontSlant", "\[Rule]", "\"\<Plain\>\""}], ",", 
+        RowBox[{"FontWeight", "\[Rule]", "\"\<Bold\>\""}], ",", 
+        RowBox[{"FontSize", "\[Rule]", "12"}]}], "]"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+         {
+          RowBox[{"RGBColor", "[", 
+           RowBox[{"1", ",", "0", ",", "0"}], "]"}], 
+          RowBox[{"Thickness", "[", "0.006", "]"}]}
+        }], "\[NoBreak]", ")"}]}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<\!\(\*SubscriptBox[\(v\), \(o\)]\) [\!\(\*FractionBox[\(m\), \
+\(s\)]\)]\>\"", ",", "\"\<s [km] \>\""}], "}"}]}]}], "]"}]}], 
+  TraditionalForm]], "Input",
+ CellChangeTimes->{
+  3.563214203047838*^9, {3.5632246864072127`*^9, 3.5632246907197127`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sporzadzenie wykresu obrazujacego zaleznosc zasiegu \
+drugiego czlonu rakiety\nod szybkosci poczatkowej rakiety dla x = 0.4.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"rys2", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"s", "\[Times]", 
+       SuperscriptBox["10", 
+        RowBox[{"-", "3"}]]}], "/.", 
+      RowBox[{"x", "\[Rule]", "0.4"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"vo", ",", "100", ",", "200"}], "}"}], ",", 
+     RowBox[{"BaseStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+        RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}], ",", 
+        RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"PlotLabel", "\[Rule]", 
+      RowBox[{"StyleForm", "[", 
+       RowBox[{"\"\<     x = 0.4  \>\"", ",", 
+        RowBox[{"FontFamily", "\[Rule]", "\"\<Helvetica\>\""}], ",", 
+        RowBox[{"FontSlant", "\[Rule]", "\"\<Plain\>\""}], ",", 
+        RowBox[{"FontWeight", "\[Rule]", "\"\<Bold\>\""}], ",", 
+        RowBox[{"FontSize", "\[Rule]", "12"}]}], "]"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+         {
+          RowBox[{"RGBColor", "[", 
+           RowBox[{"1", ",", "0", ",", "0"}], "]"}], 
+          RowBox[{"Thickness", "[", "0.006", "]"}]}
+        }], "\[NoBreak]", ")"}]}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<\!\(\*SubscriptBox[\(v\), \(o\)]\) [\!\(\*FractionBox[\(m\), \
+\(s\)]\)]\>\"", ",", "\"\<s [km] \>\""}], "}"}]}]}], "]"}]}], 
+  TraditionalForm]], "Input",
+ CellChangeTimes->{
+  3.563214190485338*^9, {3.5632247100947127`*^9, 3.5632247134384627`*^9}}]
+}, Open  ]]
+},
+WindowSize->{1016, 651},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+DockedCells->FEPrivate`FrontEndResource[
+ "FEExpressions", "CompatibilityToolbar"],
+Magnification->1.25,
+FrontEndVersion->"9.0 for Microsoft Windows (32-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 595, 18, 84, "Subsection"],
+Cell[1177, 42, 127, 4, 37, "Input"],
+Cell[1307, 48, 231, 7, 37, "Input"],
+Cell[1541, 57, 328, 11, 46, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1906, 73, 525, 16, 83, "Subsection"],
+Cell[2434, 91, 209, 7, 37, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2680, 103, 469, 16, 53, "Subsection"],
+Cell[3152, 121, 319, 11, 62, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3508, 137, 990, 32, 117, "Subsection"],
+Cell[4501, 171, 426, 15, 86, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4964, 191, 406, 12, 83, "Subsection"],
+Cell[CellGroupData[{
+Cell[5395, 207, 328, 11, 37, "Input"],
+Cell[5726, 220, 592, 11, 27, "Message"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6367, 237, 674, 22, 88, "Subsection"],
+Cell[7044, 261, 927, 30, 210, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8008, 296, 360, 12, 54, "Subsection"],
+Cell[8371, 310, 188, 7, 63, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8596, 322, 228, 3, 83, "Subsection"],
+Cell[8827, 327, 1645, 41, 143, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10509, 373, 228, 3, 83, "Subsection"],
+Cell[10740, 378, 1645, 41, 143, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

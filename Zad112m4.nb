@@ -1,0 +1,529 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     18309,        520]
+NotebookOptionsPosition[     16905,        469]
+NotebookOutlinePosition[     17352,        487]
+CellTagsIndexPosition[     17309,        484]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["Wypisanie wzorow na odleglosc czasoprzestrzenna dwoch wybuchow na \
+sloncu w ukladzie zwiazanym\n z Ziemia (\"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalDelta]s", "1"], TraditionalForm]]],
+ StyleBox["\") i w ukladzie zwiazanym z rakieta (\"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalDelta]s", "2"], TraditionalForm]]],
+ StyleBox["\"),  \"c\" - predkosc swiatla w prozni, \n \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalDelta]t", "1"], TraditionalForm]]],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalDelta]x", "1"], TraditionalForm]]],
+ StyleBox["\" - odleglosc czasowa i przestrzenna dwoch wybuchow na sloncu w \
+ukladzie zwiazanym\n z Ziemia,  \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalDelta]t", "2"], TraditionalForm]]],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalDelta]x", "2"], TraditionalForm]]],
+ StyleBox["\" - odleglosc czasowa i przestrzenna dwoch wybuchow na sloncu w \
+ukladzie zwiazanym\n z rakieta.",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], ";"}], 
+  TraditionalForm]], "Input"],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"\[CapitalDelta]s1", "=", 
+    SqrtBox[
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["c", "2"], "\[Times]", 
+       SuperscriptBox["\[CapitalDelta]t1", "2"]}], "-", 
+      SuperscriptBox["\[CapitalDelta]x1", "2"]}]]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"\[CapitalDelta]s2", "=", 
+    SqrtBox[
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["c", "2"], "\[Times]", 
+       SuperscriptBox["\[CapitalDelta]t2", "2"]}], "-", 
+      SuperscriptBox["\[CapitalDelta]x2", "2"]}]]}], ";"}], 
+  TraditionalForm]}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Wprowadzenie wartosci dla odleglosci czasowej i przestrzennej \
+dwoch wybuchow na sloncu w ukladzie zwiazanym\n z Ziemia oraz dla ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" predkosci swiatla w prozni.",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[CapitalDelta]x1", "=", "0"}], ";"}], "      ", 
+   StyleBox[
+    RowBox[{"(*", " ", "m", " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[CapitalDelta]t1", "=", "10"}], ";"}], "    ", 
+   StyleBox[
+    RowBox[{"(*", " ", "s", " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"c", "=", 
+     RowBox[{"3", "\[Times]", 
+      SuperscriptBox["10", "8"]}]}], ";"}], "       ", 
+   StyleBox[
+    RowBox[{"(*", " ", 
+     FractionBox["m", 
+      RowBox[{"s", " "}]], " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Rozwiazanie rownania bedacego matematycznym zapisem \
+rownosci odleglosci czasoprzestrzennej dwoch \nwybuchow w ukladzie zwiazanym \
+z Ziemia i w ukladzie zwiazanym z rakieta.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"r1", "=", 
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"\[CapitalDelta]s1", "==", "\[CapitalDelta]s2"}], ",", 
+     "\[CapitalDelta]x2"}], "]"}]}], TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\[CapitalDelta]x2", "\[Rule]", 
+     RowBox[{
+      RowBox[{"-", "300000000"}], " ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"-", "100"}], "+", 
+        SuperscriptBox["\[CapitalDelta]t2", "2"]}]]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[CapitalDelta]x2", "\[Rule]", 
+     RowBox[{"300000000", " ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"-", "100"}], "+", 
+        SuperscriptBox["\[CapitalDelta]t2", "2"]}]]}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.7519630496599007`*^9, {3.752581401417286*^9, 3.7525814332194433`*^9}, {
+   3.7525814664781547`*^9, 3.7525815941152773`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sporzadzenie wykresu obrazujacego zaleznosc \
+odleglosci  przestrzennej dwoch wybuchow na sloncu w ukladzie zwiazanym z \
+rakieta od ich odleglosci czasowej w tym ukladzie.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"\[CapitalDelta]x2", "\[Times]", 
+      SuperscriptBox["10", 
+       RowBox[{"-", "3"}]]}], "/.", 
+     RowBox[{"r1", "[", 
+      RowBox[{"[", 
+       RowBox[{"2", ",", "1"}], "]"}], "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[CapitalDelta]t2", ",", "10.5", ",", "11.5"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"TextStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+       RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}], ",", 
+       RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+    "\[IndentingNewLine]", " ", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+        RowBox[{"Thickness", "[", "0.006", "]"}]}], "}"}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<\!\(\*SubscriptBox[\(\[CapitalDelta]t\), \(2\)]\) [s]\>\"", ",", 
+       "\"\<\!\(\*SubscriptBox[\(\[CapitalDelta]x\), \(2\)]\)  [km]\>\""}], 
+      "}"}]}]}], "]"}], TraditionalForm]], "Input",
+ CellChangeTimes->{3.6205672877535825`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {RGBColor[1, 0, 0], Thickness[0.006], LineBox[CompressedData["
+1:eJwVzns01GkYB3DRKnTbXCtlXd6XcmbMjJkxb4XnESc2jY7axKKy1Wp1maY4
+SheXyl7EdrEq2iWr2qgJG4sl19KSziyypVw6kbTJJZdxyf72j+f7PZ9/vuex
+DNnvu1NbS0trPXf/9yy5iksC3/EKfX7z4aG4o8zRjvO5O02lM315GKJs2LWB
+s0Xx8PTWTTws++ldfTrnvIo9Wib+PIxot7+EMwjUbds8dCKEh92KG8I4bQL+
+qz1vrgvn4f3zGSG6nxCo0fhmVV7m4amn56vn6BNYaBo4W9jFw4AMVf+AEYHy
+0cLQrSf5qBUbuHaZBYHk64ZNu00c8Nfn6njT5QQcJyeN1mU64C8HjwveOBKI
+48dNPDEXYJj1nzraLgQeXlzm3rddgInzha5DngRyrfPdVdkCVIXv25G7kcAf
+jz+r1BkSYPqH1b8XBHF7X5aZXxUL8Y3Kbc+FUAKtEcVOzUeEqH3yqbxISeBm
+YltXbIkQF/0tW5J9lIBLkdiMjgsxPvCxT3g8ASU/VezlLML70yO3T58lIG+J
+mieIEmFg+xcRijQCy1ISzsSWirBfdszW9jqBJTEObi+mRLgpW6JDcgnk5NlV
+rWKOuCCArJ0oIXDMvKNjINIR0yyv3TW7T2D+pc6rdfmOGE2CE+apCYgal/7T
+O+iI2zPbvNWtBA68L7F3E4jRcGW/U2sXAX1xmrI/VIzmc9kPpf0E0loK8tRZ
+YhwZW6j3epzA0ZGYVOs2MT4Kvqt4MZOC6+F9Lp1GEpzUSoKc+RSUqwrPlPtI
+cKJEs7JyEYVnVp4H2GkJ+uanXrljQ+GJgUN5dbkEr9no9oY5UIiseK2s1Eiw
+7vaM7fsYBe3ViUtP8KW4NlwMXu4UrvSlW7h8LcULm8a8wuQUFJtHpxpSpdh+
+66RzwBYKZTsmbcYapBizxvOS5VcUEjp2ZxvpOuGHgTQLwV4KQUk1LZbMCcue
+280zjaTgrLMw2ljhhP4dHrYesRRC/NSDeplOOBBkvwISKAxLu/Wym5yww9Qz
+2TCFAt/kXr+NvgzTe4dX8DMopOwXyYpXybBQ88zOMofChShehvkBGdbHfrug
+s4DCbet7yM+SYZ7NA6uecgoeNfnkULMM32s7X3lQR+Gbhr49R/QYTmnWuPU1
+U1jQszizgjGcHWao7mynEFHVFq4OZRhmtrj2Vi/3j63to+RUhj+35b4p/0DB
+SD/L485fDP/1n939jrOi8NzM2DqGrDn45eJhCqfmKMs21jNsqjNoPcTZIHWW
+9egjhvpFO+vtRijoV6SqnNUMw88vUv04SsEyt/HJwxaG3p4xh7aNU5AGPNvW
+9orh5aoWxRnOnx/pPa7qYvjahb+3mPPd+ImU6G6GsZLWnUYTFKLkViVWPQwL
+rSR+tZxdqpJqdr1laDXVwwRTFOQPN759N8BQEekqDeJcJM8uKhtkWDqULPqe
+c6+nQVzSEMMtvW72rzgbR3XrCocZJrakmV/8SMGvz6Tx4BjD575DZjWcFaJ7
+h901DJc3eBkPcva+cXCJ8TjD6uqRud7TFKJ1dTYUTDD8FNbrH+bs+qLt5elJ
+hsElmbrXOKdU1ir8phjmSMe1Gzmf5VVobD8y1ORumJ7mbJ5ce2yM839TNx/z
+
+     "]]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+    "\"\\!\\(\\*SubscriptBox[\\(\[CapitalDelta]t\\), \\(2\\)]\\) [s]\"", 
+     TraditionalForm], 
+    FormBox[
+    "\"\\!\\(\\*SubscriptBox[\\(\[CapitalDelta]x\\), \\(2\\)]\\)  [km]\"", 
+     TraditionalForm]},
+  AxesOrigin->{10.600000000000001`, 960000.},
+  BaseStyle->{FontFamily -> "Times", FontSlant -> "Italic", FontSize -> 12},
+  PlotRange->{{10.5, 11.5}, {960468.6556944113, 1.7036724913418954`*^6}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{
+  3.7519630497067785`*^9, {3.752581401441351*^9, 3.7525814332460775`*^9}, {
+   3.752581466493781*^9, 3.7525815941358676`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Wyznaczenie zaleznosci predkosci rakiety od \
+odleglosci czasoprzestrzennej dwoch wybuchow w ukladzie zwiazanym z rakieta \
+poprzez rozwiazanie rownania  bedacego matematycznym zapisem dylatacji czasu.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"r2", "=", 
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"\[CapitalDelta]t2", "==", 
+      FractionBox["\[CapitalDelta]t1", 
+       SqrtBox[
+        RowBox[{"1", "-", 
+         FractionBox[
+          SuperscriptBox["v", "2"], 
+          SuperscriptBox["c", "2"]]}]]]}], ",", "v"}], "]"}]}], 
+  TraditionalForm]], "Input",
+ CellChangeTimes->{{3.7525814609098864`*^9, 3.752581591339297*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"v", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"300000000", " ", 
+        SqrtBox[
+         RowBox[{
+          RowBox[{"-", "100"}], "+", 
+          SuperscriptBox["\[CapitalDelta]t2", "2"]}]]}], 
+       "\[CapitalDelta]t2"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"v", "\[Rule]", 
+     FractionBox[
+      RowBox[{"300000", " ", 
+       SqrtBox[
+        RowBox[{
+         RowBox[{"-", "100"}], "+", 
+         SuperscriptBox["\[CapitalDelta]t2", "2"]}]]}], 
+      "\[CapitalDelta]t2"]}], "}"}]}], "}"}]], "Input",
+ CellChangeTimes->{{3.7525817642098055`*^9, 3.752581764847033*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sporzadzenie wykresu obrazujacego zaleznosc predkosci \
+rakiety od odleglosci  czasowej dwoch wybuchow na sloncu w ukladzie zwiazanym \
+z rakieta.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"v", "\[Times]", 
+      SuperscriptBox["10", "6"]}], "/.", 
+     RowBox[{"r2", "[", 
+      RowBox[{"[", 
+       RowBox[{"2", ",", "1"}], "]"}], "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[CapitalDelta]t2", ",", "0", ",", "1000"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"TextStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+       RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}], ",", 
+       RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+    "\[IndentingNewLine]", " ", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+        RowBox[{"Thickness", "[", "0.006", "]"}]}], "}"}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<\[CapitalDelta]t [s]\>\"", ",", 
+       "\"\<v  [\!\(\*FractionBox[\(km\), \(s\)]\)]\>\""}], "}"}]}]}], "]"}], 
+  TraditionalForm]], "Input",
+ CellChangeTimes->{
+  3.620567290514787*^9, {3.752581383289095*^9, 3.75258143139764*^9}, {
+   3.752581489593528*^9, 3.752581491068821*^9}, {3.752581522980174*^9, 
+   3.7525815538825893`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {RGBColor[1, 0, 0], Thickness[0.006], LineBox[CompressedData["
+1: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
+a25q8v2hz2Z21ZQDG0YDDfj+H0CW+8E=
+     "]]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox["\"\[CapitalDelta]t [s]\"", TraditionalForm], 
+    FormBox[
+    "\"v  [\\!\\(\\*FractionBox[\\(km\\), \\(s\\)]\\)]\"", TraditionalForm]},
+  AxesOrigin->{0, 2.989*^14},
+  BaseStyle->{FontFamily -> "Times", FontSlant -> "Italic", FontSize -> 12},
+  PlotRange->{{0, 1000}, {2.989154032989656*^14, 2.99984999624369*^14}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Input",
+ CellChangeTimes->{{3.7525816144100037`*^9, 3.7525816159960794`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    TagBox[
+     FrameBox["function"],
+     "SelectionPlaceholder"], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      TagBox[
+       FrameBox["var"],
+       "Placeholder"], ",", 
+      TagBox[
+       FrameBox["min"],
+       "Placeholder"], ",", 
+      TagBox[
+       FrameBox["max"],
+       "Placeholder"]}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7525816174824324`*^9, 3.7525816236387978`*^9}}]
+}, Open  ]]
+},
+WindowSize->{1264, 889},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+DockedCells->FEPrivate`FrontEndResource[
+ "FEExpressions", "CompatibilityToolbar"],
+Magnification->1.25,
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1289, 37, 135, "Subsection"],
+Cell[1871, 61, 127, 4, 35, "Input"],
+Cell[2001, 67, 619, 20, 82, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2657, 92, 369, 9, 69, "Subsection"],
+Cell[3029, 103, 230, 7, 35, "Input"],
+Cell[3262, 112, 229, 7, 35, "Input"],
+Cell[3494, 121, 323, 11, 47, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3854, 137, 279, 4, 69, "Subsection"],
+Cell[CellGroupData[{
+Cell[4158, 145, 218, 6, 35, "Input"],
+Cell[4379, 153, 689, 21, 47, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5117, 180, 276, 4, 69, "Subsection"],
+Cell[CellGroupData[{
+Cell[5418, 188, 1307, 35, 110, "Input"],
+Cell[6728, 225, 2521, 50, 293, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9298, 281, 305, 4, 69, "Subsection"],
+Cell[9606, 287, 430, 13, 94, "Input"],
+Cell[10039, 302, 679, 22, 59, InheritFromParent]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10755, 329, 250, 4, 69, "Subsection"],
+Cell[11008, 335, 1360, 37, 140, "Input"],
+Cell[12371, 374, 4031, 72, 285, InheritFromParent],
+Cell[16405, 448, 484, 18, 62, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

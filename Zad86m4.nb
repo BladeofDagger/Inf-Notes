@@ -1,0 +1,259 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      7720,        249]
+NotebookOptionsPosition[      6955,        219]
+NotebookOutlinePosition[      7402,        237]
+CellTagsIndexPosition[      7359,        234]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["Wprowadzenie wartosci dla ladunku kulki ( \"q\" ), przenikalnosci \
+dielektrycznej\nprozni ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Epsilon]", "o"], TraditionalForm]]],
+ StyleBox["\" ) i czestosci kolowej ( \"\[Omega]\" ).",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], ";"}], 
+  TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"q", "=", 
+     SuperscriptBox["10", 
+      RowBox[{"-", "9"}]]}], ";"}], "                              ", 
+   StyleBox[
+    RowBox[{"(*", " ", "C", "  ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[Epsilon]o", "=", 
+     RowBox[{"8.85", "\[Times]", 
+      SuperscriptBox["10", 
+       RowBox[{"-", "12"}]]}]}], ";"}], "           ", 
+   StyleBox[
+    RowBox[{"(*", " ", 
+     FractionBox["F", 
+      RowBox[{"m", " "}]], " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[Omega]", "=", 
+     RowBox[{"2", " ", "\[Pi]"}]}], ";"}], "                                ", 
+   StyleBox[
+    RowBox[{"(*", " ", 
+     SuperscriptBox["s", 
+      RowBox[{"-", "1"}]], "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Wprowadzenie wzorow na promien kulki ( \"R\" ) (symbol \"t\" \
+oznacza czas trwania ruchu,\na \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["R", "o"], TraditionalForm]]],
+ "\" maksymalny promien kulki",
+ StyleBox["), na pojemnosc elektryczna kulki ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["C", "k"], TraditionalForm]]],
+ StyleBox["\" ) i jej potencjal \n( \"\[Phi]\" ).",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"R", "=", 
+    RowBox[{"Ro", "\[Times]", 
+     RowBox[{"sin", "(", 
+      RowBox[{"\[Omega]", " ", "t"}], ")"}]}]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"Ck", "=", 
+    RowBox[{
+    "4", "\[Times]", "\[Pi]", "\[Times]", "\[Epsilon]o", "\[Times]", "R"}]}], 
+   ";"}], TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Phi]", "=", 
+    FractionBox["q", "Ck"]}], ";"}], TraditionalForm]}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sporzadzenie wykresu obrazujacego zaleznosc \
+potencjalu kulki od czasu dla dwoch roznych wartosci jej maksymalnego \
+promienia.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"rys1", "=", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"\[Phi]", "/.", 
+       RowBox[{"Ro", "\[Rule]", "0.02"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0.1", ",", "0.4"}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"(", "\[NoBreak]", GridBox[{
+          {
+           RowBox[{"RGBColor", "[", 
+            RowBox[{"1", ",", "0", ",", "0"}], "]"}], 
+           RowBox[{"Thickness", "[", "0.006", "]"}]}
+         }], "\[NoBreak]", ")"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"DisplayFunction", "\[Rule]", "Identity"}]}], "]"}]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"rys2", "=", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"\[Phi]", "/.", 
+       RowBox[{"Ro", "\[Rule]", "0.04"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0.1", ",", "0.4"}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"(", "\[NoBreak]", GridBox[{
+          {
+           RowBox[{"RGBColor", "[", 
+            RowBox[{"0", ",", "1", ",", "0"}], "]"}], 
+           RowBox[{"Thickness", "[", "0.006", "]"}]}
+         }], "\[NoBreak]", ")"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"DisplayFunction", "\[Rule]", "Identity"}]}], "]"}]}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{"Show", "[", 
+   RowBox[{"rys1", ",", "rys2", ",", 
+    RowBox[{"DisplayFunction", "\[Rule]", "$DisplayFunction"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"TextStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+       RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}], ",", 
+       RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<t [s]\>\"", ",", "\"\<\[Phi] [V] \>\""}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"PlotRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"100", ",", "850"}], "}"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Prolog", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Text", "[", 
+        RowBox[{
+         RowBox[{"StyleForm", "[", 
+          RowBox[{"\"\<\!\(\*SubscriptBox[\(R\), \(o\)]\) = 0.02 m\>\"", ",", 
+           RowBox[{"FontColor", "\[Rule]", 
+            RowBox[{"RGBColor", "[", 
+             RowBox[{"1", ",", "0", ",", "0"}], "]"}]}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Scaled", "[", 
+          RowBox[{"{", 
+           RowBox[{"0.40", ",", "0.65"}], "}"}], "]"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         RowBox[{"StyleForm", "[", 
+          RowBox[{"\"\<\!\(\*SubscriptBox[\(R\), \(o\)]\) = 0.04 m\>\"", ",", 
+           RowBox[{"FontColor", "\[Rule]", 
+            RowBox[{"RGBColor", "[", 
+             RowBox[{"0", ",", "1", ",", "0"}], "]"}]}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Scaled", "[", 
+          RowBox[{"{", 
+           RowBox[{"0.40", ",", "0.30"}], "}"}], "]"}]}], "]"}]}], "}"}]}]}], 
+   "]"}], TraditionalForm]}], "Input",
+ CellChangeTimes->{{3.6205672096754465`*^9, 3.620567212296251*^9}}]
+}, Open  ]]
+},
+WindowSize->{1264, 889},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+DockedCells->FEPrivate`FrontEndResource[
+ "FEExpressions", "CompatibilityToolbar"],
+Magnification->1.25,
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 430, 12, 69, "Subsection"],
+Cell[1012, 36, 127, 4, 35, "Input"],
+Cell[1142, 42, 289, 9, 37, "Input"],
+Cell[1434, 53, 364, 12, 49, "Input"],
+Cell[1801, 67, 321, 10, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2159, 82, 608, 18, 91, "Subsection"],
+Cell[2770, 102, 517, 17, 103, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3324, 124, 232, 4, 69, "Subsection"],
+Cell[3559, 130, 3380, 86, 366, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

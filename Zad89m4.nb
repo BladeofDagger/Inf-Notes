@@ -1,0 +1,452 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     12399,        442]
+NotebookOptionsPosition[     10833,        384]
+NotebookOutlinePosition[     11280,        402]
+CellTagsIndexPosition[     11237,        399]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Wprowadzenie wartosci dla odleglosci pomiedzy \
+plytkami odchylajacymi ( \"d\" ), ich \ndlugosci ( \"b\" ) oraz dla \
+odleglosci plytek od ekranu ( \"l\" ).",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], ";"}], 
+  TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"d", "=", "0.02"}], ";"}], "          ", 
+   StyleBox[
+    RowBox[{"(*", " ", "m", " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"b", "=", "0.04"}], ";"}], "           ", 
+   StyleBox[
+    RowBox[{"(*", " ", "m", " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"l", "=", "0.10"}], ";"}], "           ", 
+   StyleBox[
+    RowBox[{"(*", " ", "m", " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Wprowadzenie wzorow na energie kinetyczna ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["E", "k"], TraditionalForm]]],
+ StyleBox["\" ) i potencjalna elektronu ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["E", "p"], TraditionalForm]]],
+ StyleBox["\" )\nprzyspieszonego w polu elektrostatycznym o roznicy \
+potencjalow ( \"Ua\" ). Symbole \"m\" \ni \"e\" oznaczaja odpowiednio mase i \
+ladunek elektronu, a \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "1"], TraditionalForm]]],
+ "\" jego predkosc."
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"Ek", "=", 
+    FractionBox[
+     RowBox[{"m", "\[Times]", 
+      SuperscriptBox["v1", "2"]}], "2"]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"Ep", "=", 
+    RowBox[{"e", "\[Times]", "Ua"}]}], ";"}], TraditionalForm]}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Obliczenie predkosci elektronu (\"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "1"], TraditionalForm]]],
+ "\"",
+ StyleBox[") przyspieszonego w polu elektrostatycznym o roznicy potencjalow ( \
+\"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["U", "a"], TraditionalForm]]],
+ StyleBox["\" ).",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"A", "=", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{"Ek", "==", "Ep"}], ",", "v1"}], "]"}]}], ";"}], 
+  TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Obliczenie czasu przelotu elektronu przez plytki odchylajace (\"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["t", "1"], TraditionalForm]]],
+ "\"",
+ StyleBox[") i czasu podczas ktorego elektron pokonuje odleglosc pomiedzy \
+plytkami odchylajacymi a ekranem (\"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["t", "2"], TraditionalForm]]],
+ "\"",
+ StyleBox[").",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"t1", "=", 
+    RowBox[{
+     FractionBox["b", "v1"], "/.", 
+     RowBox[{"A", "[", 
+      RowBox[{"[", 
+       RowBox[{"2", ",", "1"}], "]"}], "]"}]}]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"t2", "=", 
+    RowBox[{
+     FractionBox["l", "v1"], "/.", 
+     RowBox[{"A", "[", 
+      RowBox[{"[", 
+       RowBox[{"2", ",", "1"}], "]"}], "]"}]}]}], ";"}], 
+  TraditionalForm]}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Wprowadzenie wzorow na sile dzialajaca na elektron \
+podczas przelotu przez plytki \nodchylajace ( \"F\" ) i przyspieszenie ( \
+\"a\" ) nadawane przez ta sile elektronowi.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"F", "=", 
+    RowBox[{"e", "\[Times]", 
+     FractionBox["U", "d"]}]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"a", "=", 
+    FractionBox["F", "m"]}], ";"}], TraditionalForm]}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Obliczenie drogi (\"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["s", "1"], TraditionalForm]]],
+ "\"",
+ StyleBox[") o jaka odchyli sie tor elektronu podczas jego przelotu przez \
+plytki \nodchylajace.",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"s1", "=", 
+    FractionBox[
+     RowBox[{"a", "\[Times]", 
+      SuperscriptBox["t1", "2"]}], "2"]}], ";"}], TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Obliczenie predkosci (\"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "2"], TraditionalForm]]],
+ "\"",
+ StyleBox[")  jaka bedzie posiadal elektron po wyjsciu z  plytek \n\
+odchylajacych.",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"v2", "=", 
+    RowBox[{"a", "\[Times]", "t1"}]}], ";"}], TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Obliczenie drogi (\"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["s", "2"], TraditionalForm]]],
+ "\"",
+ StyleBox[") o jaka odchyli sie tor elektronu podczas jego przelotu na drodze \
+pomiedzy plytkami odchylajacymi a ekranem.",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"s2", "=", 
+    RowBox[{"v2", "\[Times]", "t2"}]}], ";"}], TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Obliczenie calkowitej drogi (\"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox["s", TraditionalForm]]],
+ "\"",
+ StyleBox[") o jaka odchyli sie tor elektronu. ",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"s", "=", 
+    RowBox[{"s1", "+", "s2"}]}], ";"}], TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sporzadzenie wykresu obrazujacego zaleznosc \
+odchylenia plamki oscyloskopu od napiecia na plytkach odchylajacych dla dwoch \
+wartosci napiecia anodowego.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"rys1", "=", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"s", "\[Times]", 
+        SuperscriptBox["10", "2"]}], "/.", 
+       RowBox[{"Ua", "\[Rule]", "1000"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"U", ",", "100", ",", "200"}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"(", "\[NoBreak]", GridBox[{
+          {
+           RowBox[{"RGBColor", "[", 
+            RowBox[{"1", ",", "0", ",", "0"}], "]"}], 
+           RowBox[{"Thickness", "[", "0.006", "]"}]}
+         }], "\[NoBreak]", ")"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"DisplayFunction", "\[Rule]", "Identity"}]}], "]"}]}], ";"}], 
+  TraditionalForm], "\n", 
+ FormBox[
+  RowBox[{
+   RowBox[{"rys2", "=", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"s", "\[Times]", 
+        SuperscriptBox["10", "2"]}], "/.", 
+       RowBox[{"Ua", "\[Rule]", "1500"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"U", ",", "100", ",", "200"}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"(", "\[NoBreak]", GridBox[{
+          {
+           RowBox[{"RGBColor", "[", 
+            RowBox[{"0", ",", "1", ",", "0"}], "]"}], 
+           RowBox[{"Thickness", "[", "0.006", "]"}]}
+         }], "\[NoBreak]", ")"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"DisplayFunction", "\[Rule]", "Identity"}]}], "]"}]}], "\n", 
+   "\[IndentingNewLine]"}], TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{"Show", "[", 
+   RowBox[{"rys1", ",", "rys2", ",", 
+    RowBox[{"DisplayFunction", "\[Rule]", "$DisplayFunction"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"TextStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+       RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}], ",", 
+       RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<U [V]\>\"", ",", "\"\<s   [cm] \>\""}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Prolog", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Text", "[", 
+        RowBox[{
+         RowBox[{"StyleForm", "[", 
+          RowBox[{"\"\<Ua = 1000 V\>\"", ",", 
+           RowBox[{"FontColor", "\[Rule]", 
+            RowBox[{"RGBColor", "[", 
+             RowBox[{"1", ",", "0", ",", "0"}], "]"}]}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Scaled", "[", 
+          RowBox[{"{", 
+           RowBox[{"0.60", ",", "0.85"}], "}"}], "]"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         RowBox[{"StyleForm", "[", 
+          RowBox[{"\"\<Ua = 1500 V\>\"", ",", 
+           RowBox[{"FontColor", "\[Rule]", 
+            RowBox[{"RGBColor", "[", 
+             RowBox[{"0", ",", "1", ",", "0"}], "]"}]}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Scaled", "[", 
+          RowBox[{"{", 
+           RowBox[{"0.60", ",", "0.43"}], "}"}], "]"}]}], "]"}]}], "}"}]}]}], 
+   "]"}], TraditionalForm]}], "Input",
+ CellChangeTimes->{{3.6205672385198965`*^9, 3.6205672412187014`*^9}}]
+}, Open  ]]
+},
+WindowSize->{1264, 889},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+DockedCells->FEPrivate`FrontEndResource[
+ "FEExpressions", "CompatibilityToolbar"],
+Magnification->1.25,
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 314, 6, 69, "Subsection"],
+Cell[896, 30, 127, 4, 35, "Input"],
+Cell[1026, 36, 221, 7, 35, "Input"],
+Cell[1250, 45, 222, 7, 35, "Input"],
+Cell[1475, 54, 222, 7, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1734, 66, 739, 22, 94, "Subsection"],
+Cell[2476, 90, 320, 11, 91, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2833, 106, 467, 16, 46, "Subsection"],
+Cell[3303, 124, 191, 7, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3531, 136, 531, 17, 69, "Subsection"],
+Cell[4065, 155, 479, 18, 113, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4581, 178, 329, 6, 69, "Subsection"],
+Cell[4913, 186, 279, 10, 113, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5229, 201, 343, 11, 69, "Subsection"],
+Cell[5575, 214, 183, 6, 66, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5795, 225, 333, 11, 69, "Subsection"],
+Cell[6131, 238, 131, 4, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6299, 247, 368, 11, 69, "Subsection"],
+Cell[6670, 260, 132, 4, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6839, 269, 281, 9, 46, "Subsection"],
+Cell[7123, 280, 124, 4, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7284, 289, 258, 4, 69, "Subsection"],
+Cell[7545, 295, 3272, 86, 360, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

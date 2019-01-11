@@ -1,0 +1,440 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     14895,        431]
+NotebookOptionsPosition[     13673,        384]
+NotebookOutlinePosition[     14122,        402]
+CellTagsIndexPosition[     14079,        399]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["Wprowadzenie wartosci dla czasu ruchu rakiety ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox["t", TraditionalForm]]],
+ StyleBox["\" ), szybkosci spalania paliwa ( \"\[Mu]\" ) \ni przyspieszenia \
+ziemskiego ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ "g",
+ StyleBox["\" ).",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], ";"}], 
+  TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"t", "=", "5"}], ";"}], "             ", 
+   StyleBox[
+    RowBox[{"(*", " ", "s", " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[Mu]", "=", "0.1"}], ";"}], "       ", 
+   StyleBox[
+    RowBox[{"(*", " ", 
+     FractionBox[
+      StyleBox["kg",
+       FontColor->GrayLevel[0.666667]], "s"], " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"g", "=", "9.81"}], ";"}], "     ", 
+   StyleBox[
+    RowBox[{"(*", " ", 
+     FractionBox[
+      StyleBox["m",
+       FontColor->GrayLevel[0.666667]], 
+      SuperscriptBox["s", "2"]], " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Wprowadzenie wzorow na mase spalin wyrzuconych w czasie \"t\" ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["m", "s"], TraditionalForm]]],
+ StyleBox["\" ), sile grawitacji \ndzialajaca na rakiete podczas ruchu ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["F", "g"], TraditionalForm]]],
+ StyleBox["\" ) i sile ciagu rakiety ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["F", "c"], TraditionalForm]]],
+ StyleBox["\" ). Symbole \"m\" \ni \"v\" oznaczaja odpowiednio mase \
+poczatkowa rakiety i szybkosc wylatujacych spalin.",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"ms", "=", 
+      RowBox[{"\[Mu]", "\[Times]", "t"}]}], ";"}], "\n", 
+    FormBox[
+     RowBox[{
+      RowBox[{
+       RowBox[{"Fg", "=", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"m", "-", "ms"}], ")"}], "\[Times]", "g"}]}], ";"}], "\n", 
+      RowBox[{
+       RowBox[{"Fc", "=", 
+        RowBox[{"\[Mu]", "\[Times]", "v"}]}], ";"}]}],
+     TraditionalForm]}],
+   TraditionalForm], TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ SuperscriptBox["Null", "3"]], "Output",
+ CellChangeTimes->{
+  3.7519719448200693`*^9, {3.7519721330945067`*^9, 3.7519721713619785`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Zastosowanie drugiej zasady dynamiki do obliczenia przyspieszenia \
+rakiety ( \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]]],
+ StyleBox["\" ) dla \nczasu trwania ruchu t = 5 s.",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"A", "=", 
+    RowBox[{"Solve", "[", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"m", "-", "ms"}], ")"}], "\[Times]", "a"}], "==", 
+       RowBox[{"Fc", "-", "Fg"}]}], ",", "a"}], "]"}]}], ";"}], 
+  TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sporzadzenie wykresu obrazujacego zaleznosc \
+przyspieszenia rakiety od szybkosci wylatujacych spalin dla poczatkowej masy \
+rakiety rownej 1 kg.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"rys1", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"a", "/.", "A"}], "/.", 
+      RowBox[{"m", "\[Rule]", "1"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"v", ",", "100", ",", "150"}], "}"}], ",", 
+     RowBox[{"TextStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+        RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}], ",", 
+        RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"PlotLabel", "\[Rule]", 
+      RowBox[{"StyleForm", "[", 
+       RowBox[{"\"\<     m = 1 kg  \>\"", ",", 
+        RowBox[{"FontFamily", "\[Rule]", "\"\<Helvetica\>\""}], ",", 
+        RowBox[{"FontSlant", "\[Rule]", "\"\<Plain\>\""}], ",", 
+        RowBox[{"FontWeight", "\[Rule]", "\"\<Bold\>\""}], ",", 
+        RowBox[{"FontSize", "\[Rule]", "12"}]}], "]"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+         {
+          RowBox[{"RGBColor", "[", 
+           RowBox[{"1", ",", "0", ",", "0"}], "]"}], 
+          RowBox[{"Thickness", "[", "0.006", "]"}]}
+        }], "\[NoBreak]", ")"}]}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<v [\!\(\*FractionBox[\(m\), \(s\)]\)]\>\"", ",", 
+        "\"\<a [\!\(\*FractionBox[\(m\), SuperscriptBox[\(s\), \(2\)]]\)] \
+\>\""}], "}"}]}]}], "]"}]}], TraditionalForm]], "Input",
+ CellChangeTimes->{
+  3.6205670433635564`*^9, {3.751971994979911*^9, 3.7519719972766333`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {RGBColor[1, 0, 0], Thickness[0.006], LineBox[CompressedData["
+1:eJwV0X081AcAx/GjFqXFdOlmSPw8nXPu4Vd5VdO3h43LQ0NrnTvn7jftpLAy
+UbFV7ESUpiJ5yMNCDyg3DwlLL+XllCKMrrJIVy/X02SXyG5/fF+f1/vv71Iq
+OnCbIY1G89Pv/1aUec2m0YSwT9EqvWQEvN+Hr/+g96vVqTUDFAHNxrRDEwZC
+NL4lruwII+D4spOmnSVEgERcdUxOoJQMnB4wEuLgMlVFfySBguviiRpTIR4P
+lxfI9xH47cEujXyJEKcRdjgli8A+07zOLk8hTCYHRbfaCERVC2w1h4QIbX9N
+b+Q5YC/L0DOxVYj+o5fj9uQ44F3xY7MeWjBWfO41xZtyQFagRfSuDcEwmJmd
+9X24IwQPv8tOTwrGG3Vkj+i2I5YWvd34+lYwBBYzDu0rnRAReqWGbiLCkYXb
+cpedc4JKlzD6h0CEf4z31EfMc4a/6mxpYYYIbcIqzcI4ZzyP72LNuS1CU3FW
+a7LaGeO29hFuJmKcqfJtnljjAjvDu7x8fzGeLmZ3qi+4QN6c0paaIUZQ/NWk
+NDMmumpyhpvvieFGRvtdTGSirOROrZIeAm2NzqNLw0R2lOlmp6AQ9Li63Wnw
+dUXF7oqEJ6dCYD+TGstocEVPgH+0ZV8ITnccv+lpw8KSCF9trqUEe99cdxk4
+woI6IdpWHSLBWvXNyp/+ZeFyRL51bp4E3JY9D/tFbig/Tpw7OyRB6rS/TVW7
+G+qyanX2tqEwIruN/dlsrMiMpIVLQhHJZi56eZyNgbbErPGiUHyZfJ5v+JGN
+rL6c19NDoeB39354SLnDI1MxVmYuxcn9Ln1ud90h4QWt4pJSRI07b2+x5sBs
+ncOr+CApiDLza6pNHAS9LNGExUqRmWLGMFdwYGfs7GV6UooFI8Pe1+o5YBZ6
+0iyVUhwoLponf8HBjW6DmfZeKcqPxvT62HKhiemglr+TYmTCMvZEIBcFl9fM
+914sw/30PuvFqVwMia9aMlbI8FeB/Mx0IxfBv95K8t4iwx3z4YoRLRfbNh7k
+WcfLEK/cff0TgoepBHxdnS2DR3f/pbQtPBC+FwufNchw3jqgRJDBQ3LO+aBf
+HshgplK6zL3Bw4+BlTt7J2VIG9cms97xoC2XqLqsKNT7rHqe6srHxE76scOr
+KUzaSOx8JHx4VIovFYkocDbvGJufyYdJesBnoYkUrOrSW4xv8hHR7zM4mEfB
+8lSSPFzHRxNjMEqeT+HsR/63gvd8mAWHzxrXm5CPrGNO8lGrTmZ9WkiB7fGV
+zdgHPgyfNP28pogCBuf0Rs/wkTvmbl/6O4Vwm7R1cXNIqAzoOyMrKdSey7RW
+0EnYrC+mTeq90nStiXwRid3JnJOKKgp/xr3ReVmQYBj5NRdWU+jwDrw/l0Ei
+bL7CrPsKhUcvFh7J+ILElIVOubyOwmz3bN0JOxKbtioEN/Q+nO01GmtPovg0
+/dGmegoLaLqeLQQJbyuu0fYGCox7W6sYjiROLI0QnmmkwIyx/CHPhcQzSqd1
+ukah+kFHUCKTxMpSxSGl3uSG/WslriSGHEsu3G6i4LlIbWXrRoIfrv+0mUJr
+Yvo8AzYJRUXL/VG9vUdX6/7We+CF3/aYFgqd/tqnre4kWCz19Ize39Tl95Rw
+SPwHpkEe5w==
+     "]]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+    "\"v [\\!\\(\\*FractionBox[\\(m\\), \\(s\\)]\\)]\"", TraditionalForm], 
+    FormBox[
+    "\"a [\\!\\(\\*FractionBox[\\(m\\), SuperscriptBox[\\(s\\), \\(2\\)]]\\)] \
+\"", TraditionalForm]},
+  AxesOrigin->{100., 10.},
+  BaseStyle->{FontFamily -> "Times", FontSlant -> "Italic", FontSize -> 12},
+  PlotLabel->FormBox[
+    TagBox[
+     StyleBox[
+     "\"     m = 1 kg  \"", FontFamily -> "Helvetica", FontSlant -> "Plain", 
+      FontWeight -> "Bold", FontSize -> 12], 
+     StyleForm[#, FontFamily -> "Helvetica", FontSlant -> "Plain", FontWeight -> 
+      "Bold", FontSize -> 12]& ], TraditionalForm],
+  PlotRange->{{100, 150}, {10.190000204081633`, 20.189999795918368`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{
+  3.75197194489819*^9, 3.751972000198701*^9, {3.7519721331101313`*^9, 
+   3.7519721713775024`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sporzadzenie wykresu obrazujacego zaleznosc \
+przyspieszenia rakiety od szybkosci wylatujacych spalin dla poczatkowej masy \
+rakiety rownej 1.5 kg.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"rys1", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"a", "/.", "A"}], "/.", 
+      RowBox[{"m", "\[Rule]", "1.5"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"v", ",", "100", ",", "150"}], "}"}], ",", 
+     RowBox[{"TextStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+        RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}], ",", 
+        RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"PlotLabel", "\[Rule]", 
+      RowBox[{"StyleForm", "[", 
+       RowBox[{"\"\<     m = 1.5 kg  \>\"", ",", 
+        RowBox[{"FontFamily", "\[Rule]", "\"\<Helvetica\>\""}], ",", 
+        RowBox[{"FontSlant", "\[Rule]", "\"\<Plain\>\""}], ",", 
+        RowBox[{"FontWeight", "\[Rule]", "\"\<Bold\>\""}], ",", 
+        RowBox[{"FontSize", "\[Rule]", "12"}]}], "]"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+         {
+          RowBox[{"RGBColor", "[", 
+           RowBox[{"1", ",", "0", ",", "0"}], "]"}], 
+          RowBox[{"Thickness", "[", "0.006", "]"}]}
+        }], "\[NoBreak]", ")"}]}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<v [\!\(\*FractionBox[\(m\), \(s\)]\)]\>\"", ",", 
+        "\"\<a [\!\(\*FractionBox[\(m\), SuperscriptBox[\(s\), \(2\)]]\)] \
+\>\""}], "}"}]}]}], "]"}]}], TraditionalForm]], "Input",
+ CellChangeTimes->{
+  3.620567046109161*^9, {3.7519721269537034`*^9, 3.7519721700336847`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {RGBColor[1, 0, 0], Thickness[0.006], LineBox[CompressedData["
+1:eJwVzXs0lHkYB/B3UJSJod/KURZpy9Y4ua202d7vqrPu0kzZzAxm3q1NEqmt
+M4kSmi6b7aIiTS5Rmi4idrBlslFYRLqatFmdg3Epta6V2nf/eM5zPuf7XOyY
+WMEGPYqiAtn6v6sKvQ0oKhRJgHRgdT3tMxG54gNr6r3alZ9aT/f6HU4e5bB5
+qaNhtLqenv+6iRrUDwXmzy7qt2qgC9wEk+2GrLmjH/peNdDZf0pGS03Z/WdX
+MnQ7GukTz+N6N9qweeyslu4z9+l4U2VTy/JQVAeNZQ9tbaNjin1te5PZebc1
+Tny007v4essT77D/zkolXWdf0iPnX/IeUiJU53YIHvd30ekCi9i4lSLwWhqN
+RIHdtO+LHzOOpIhwTGPOnbNDR9vlvfMbqhMh+JAyd0/nAB0VcaOUGItRvLTb
+bsR6iG4cT+j+3VeMYNOFWQ1Fb+mgxtyCnDQxMgWm4hjZv7RO3sKf2iyGfGfu
+HeexYXrY1j7K0ViCIVVqyUTqKD1Xr9XlXJAElv7TdcfdxumNmgN3D6VJ0Nq0
+rM6nboJuKc18pXkggcctk9ctuz/Qhfn31WUkDB433ZRih0k6I8Z0zQJhGFqz
+pr6dUvGJVm1TJXSdDoPRsKd3tRuFh6uDYq2ehGH4cICO+5mCTVTAYJZVOMqe
+Xb3+vZaDjoRY246wcKwsUlfKS/RQEnXOOksZjnm/WMyi4/Vx6fi8i7md4Xg0
+dC9zUGiA8nT1uL1tBFrDmrcsspmCJce2UJHhEVAKEhWbu6eg/W5i+nBeBDw/
+Jdaka6Yi/Unm0GRnBByyHgn9DxrC45hioNBcioGB3Ub9jBHCXYTLnN2kkNc1
+UWlLp4Hn9dUbuVCKNSe2B2g40yF8nd+7focUFNl866l2OuYaOXibnpJifH/F
+3qQLxliYs5yyKpOidu91xaJoLmraOJ/rH0ux3mmsRLNiBnq3/8W4j7D3Hpx0
++odrguwSmuszSwbydcrD/m4TdEr+sLJcIoNtXF3D/humEO2vS/EJkSEhV8sx
++46HDX77XKzlMrS9mnASqnj4mIAfijNkCLapnRZmYoZ5AVdzeiplcFerh7W7
+zZCaeVm497kMemZ7OKIeM2wVFEU/fi/D6E9D5bn+5hi8FN7YMoeBwPzXJHGF
+OUajydGDngyeVLS+e2E9Ex5Fkmt5YgZe9v0K2b6ZMD6y2iwikYGVztExdHAm
+op76a7VKBhaFsxMtBQRVltqYjecY2MoT1mmFBDxRpP4w64W+L1yVawnUHan8
+GTkMPPuz+2xCCfS6qvbQeQyYxXPXLZASZA0sti+4wKC43MHVPYagkUOitxQx
+CKj/Ric8TPDlivPUe9YhZ07XfnGEYFuq0ynFdXY/aiznaRqBpWGgJqeYwU5u
+ZYj4OMF6roLXdoOBMtizlskk+GgxXuZezqDvmVdO3EWCVesUvjWs36ny410v
+EZw/Q/5eVcHgY7xByIiKwGeOs+GmSgY863vcXdcITtpFhZ69ycBd5hufVEbQ
+w4wPLrjFAC6X13qpCb4tUCSXsfbTN3Y2qCDonJ9/pbmKgeRCU8+BmwSukc4Q
+aRj8vNOxxreKQKG6/aib9Vbv37KNbxO09wVu2n6bQbzlm13N1QR8fsfkZ9bJ
+ulVrj94h+A923yjW
+     "]]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+    "\"v [\\!\\(\\*FractionBox[\\(m\\), \\(s\\)]\\)]\"", TraditionalForm], 
+    FormBox[
+    "\"a [\\!\\(\\*FractionBox[\\(m\\), SuperscriptBox[\\(s\\), \\(2\\)]]\\)] \
+\"", TraditionalForm]},
+  AxesOrigin->{100., 0},
+  BaseStyle->{FontFamily -> "Times", FontSlant -> "Italic", FontSize -> 12},
+  PlotLabel->FormBox[
+    TagBox[
+     StyleBox[
+     "\"     m = 1.5 kg  \"", FontFamily -> "Helvetica", FontSlant -> "Plain",
+       FontWeight -> "Bold", FontSize -> 12], 
+     StyleForm[#, FontFamily -> "Helvetica", FontSlant -> "Plain", FontWeight -> 
+      "Bold", FontSize -> 12]& ], TraditionalForm],
+  PlotRange->{{100, 150}, {0., 5.189999897959185}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{
+  3.751971944960695*^9, {3.7519721331414194`*^9, 3.751972171408753*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1264, 889},
+WindowMargins->{{89, Automatic}, {Automatic, 46}},
+DockedCells->FEPrivate`FrontEndResource[
+ "FEExpressions", "CompatibilityToolbar"],
+Magnification->1.25,
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 451, 14, 69, "Subsection"],
+Cell[1033, 38, 127, 4, 35, "Input"],
+Cell[1163, 44, 221, 7, 35, "Input"],
+Cell[1387, 53, 302, 10, 48, "Input"],
+Cell[1692, 65, 324, 11, 44, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2053, 81, 793, 22, 94, "Subsection"],
+Cell[CellGroupData[{
+Cell[2871, 107, 500, 18, 80, "Input"],
+Cell[3374, 127, 151, 3, 35, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3574, 136, 380, 11, 69, "Subsection"],
+Cell[3957, 149, 318, 11, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4312, 165, 249, 4, 69, "Subsection"],
+Cell[CellGroupData[{
+Cell[4586, 173, 1610, 39, 116, "Input"],
+Cell[6199, 214, 2773, 56, 343, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9021, 276, 251, 4, 69, "Subsection"],
+Cell[CellGroupData[{
+Cell[9297, 284, 1614, 39, 116, "Input"],
+Cell[10914, 325, 2731, 55, 339, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

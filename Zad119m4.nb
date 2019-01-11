@@ -1,0 +1,283 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      7511,        273]
+NotebookOptionsPosition[      6522,        235]
+NotebookOutlinePosition[      6969,        253]
+CellTagsIndexPosition[      6926,        250]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["Wprowadzenie wartosci dla stalej grawitacyjnej \"G\", masy Ziemi \
+\"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["M", "Z"], TraditionalForm]]],
+ StyleBox["\" i masy statku kosmicznego \"m\".",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], ";"}], 
+  TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"G", "=", 
+     RowBox[{"6.67", "\[Times]", 
+      SuperscriptBox["10", 
+       RowBox[{"-", "11"}]]}]}], ";"}], "      ", 
+   StyleBox[
+    RowBox[{"(*", " ", 
+     FractionBox[
+      RowBox[{"N", " ", 
+       SuperscriptBox["m", "2"]}], 
+      RowBox[{
+       SuperscriptBox["kg", "2"], " "}]], " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"Mz", "=", 
+     RowBox[{"5.96", "\[Times]", 
+      SuperscriptBox["10", "24"]}]}], ";"}], "      ", 
+   StyleBox[
+    RowBox[{"(*", " ", "kg", " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"m", "=", "1000"}], ";"}], "                       ", 
+   StyleBox[
+    RowBox[{"(*", " ", "kg", " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Wypisanie wzorow na sile grawitacji \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["F", "G"], TraditionalForm]]],
+ StyleBox["\" i sile odsrodkowa \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["F", "od"], TraditionalForm]]],
+ StyleBox["\"dzialajace na statek kosmiczny oraz na energie \nkinetyczna  \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["E", "k"], TraditionalForm]]],
+ StyleBox["\" i  potencjalna \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["E", "pR"], TraditionalForm]]],
+ StyleBox["\" statku.  \"v\" - predkosc statku, \"R\" -  promien orbity.",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"FG", "=", 
+    RowBox[{"G", "\[Times]", 
+     FractionBox[
+      RowBox[{"m", "\[Times]", "Mz"}], 
+      SuperscriptBox["R", "2"]]}]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"Fod", "=", 
+    FractionBox[
+     RowBox[{"m", "\[Times]", 
+      SuperscriptBox["v", "2"]}], "R"]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"Ek", "=", 
+    FractionBox[
+     RowBox[{"m", "\[Times]", 
+      SuperscriptBox["v", "2"]}], "2"]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"EpR", "=", 
+    RowBox[{
+     RowBox[{"-", "G"}], "\[Times]", 
+     FractionBox[
+      RowBox[{"m", "\[Times]", "Mz"}], "R"]}]}], ";"}], 
+  TraditionalForm]}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Obliczenie energii calkowitej statku kosmicznego \
+Ec[R_] przy podstawieniu wyrazenia na predkosc statku \nwyznaczonego z \
+warunku rownosci sily odsrodkowej i grawitacji (rownanie \"r1 \").",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"r1", "=", 
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"Fod", "\[Equal]", "FG"}], ",", "v"}], "]"}]}], 
+  TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"v", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["1.9938204533006478`*^7", 
+        SqrtBox["R"]]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"v", "\[Rule]", 
+      FractionBox["1.9938204533006478`*^7", 
+       SqrtBox["R"]]}], "}"}]}], "}"}], TraditionalForm]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Ec", "[", "R_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Ek", "+", "EpR"}], "/.", 
+      RowBox[{"r1", "[", 
+       RowBox[{"[", 
+        RowBox[{"2", ",", "1"}], "]"}], "]"}]}]}], ";"}]}], 
+  TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sporzadzenie wykresu obrazujacego zaleznosc energii \
+calkowitej statku od promienia orbity.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"Ec", "[", 
+      RowBox[{"R", "\[Times]", 
+       SuperscriptBox["10", "3"]}], "]"}], 
+     SuperscriptBox["10", "12"]], ",", 
+    RowBox[{"{", 
+     RowBox[{"R", ",", "6500", ",", "40000"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"TextStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+       RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}], ",", 
+       RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+    "\[IndentingNewLine]", " ", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+        RowBox[{"Thickness", "[", "0.006", "]"}]}], "}"}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<R  \!\(\*SuperscriptBox[\([\), \(\\\ \)]\)km]\>\"", ",", 
+       "\"\<Ec [ \!\(\*SuperscriptBox[\(10\), \(\(\\\ \)\(12\)\)]\)J]\>\""}], 
+      "}"}]}]}], "]"}], TraditionalForm]], "Input",
+ CellChangeTimes->{3.6205678491673613`*^9}]
+}, Open  ]]
+},
+WindowSize->{1264, 889},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+DockedCells->FEPrivate`FrontEndResource[
+ "FEExpressions", "CompatibilityToolbar"],
+Magnification->1.25,
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 388, 12, 46, "Subsection"],
+Cell[970, 36, 127, 4, 35, "Input"],
+Cell[1100, 42, 435, 15, 55, "Input"],
+Cell[1538, 59, 282, 9, 37, "Input"],
+Cell[1823, 70, 235, 7, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2095, 82, 853, 26, 72, "Subsection"],
+Cell[2951, 110, 810, 30, 227, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3798, 145, 348, 6, 69, "Subsection"],
+Cell[CellGroupData[{
+Cell[4171, 155, 176, 6, 35, "Input"],
+Cell[4350, 163, 367, 12, 63, "Output"]
+}, Open  ]],
+Cell[4732, 178, 318, 11, 58, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5087, 194, 196, 3, 46, "Subsection"],
+Cell[5286, 199, 1220, 33, 148, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

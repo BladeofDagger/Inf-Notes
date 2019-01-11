@@ -1,0 +1,319 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      9045,        310]
+NotebookOptionsPosition[      7977,        269]
+NotebookOutlinePosition[      8424,        287]
+CellTagsIndexPosition[      8381,        284]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["Wprowadzenie wartosci dla energii spoczynkowej protonu  (\"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["Ep", "o"], TraditionalForm]]],
+ StyleBox["\"), dla  predkosci swiatla w prozni (\"c\") oraz dla\nsrednicy \
+Galaktyki (\"l\").",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], ";"}], 
+  TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"Epo", "=", "0.940"}], ";"}], "  ", 
+   StyleBox[
+    RowBox[{"(*", " ", "GeV", " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"c", "=", "1"}], ";"}], "              ", 
+   StyleBox[
+    RowBox[{"(*", " ", 
+     FractionBox["ly", "rok"], " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"l", "=", 
+     SuperscriptBox["10", "5"]}], ";"}], "       ", 
+   StyleBox[
+    RowBox[{"(*", " ", "ly", " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Rozwiazanie ukladu rownan bedacego matematycznym zapisem zwiazku \
+pomiedzy energia protonu a jego masa (w ukadzie spoczynkowym protonu i \
+poruszajacym sie) oraz pomiedzy masa protonu w ukadzie spoczynkowym (\"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["m", "o"], TraditionalForm]]],
+ StyleBox["\") i masa protonu w ukladzie poruszajacym sie wzgledem ukladu \
+spoczynkowego z predkoscia \"v\" (\"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox["m", TraditionalForm]]],
+ StyleBox["\").  \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox["Ep", TraditionalForm]]],
+ StyleBox["\" - energia protonu  w ukladzie poruszajacym sie.",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"r1", "=", 
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"m", "==", 
+        FractionBox["mo", 
+         SqrtBox[
+          RowBox[{"1", "-", 
+           FractionBox[
+            SuperscriptBox["v", "2"], 
+            SuperscriptBox["c", "2"]]}]]]}], ",", 
+       RowBox[{"Ep", "==", 
+        RowBox[{"m", "\[Times]", 
+         SuperscriptBox["c", "2"]}]}], ",", 
+       RowBox[{"Epo", "==", 
+        RowBox[{"mo", "\[Times]", 
+         SuperscriptBox["c", "2"]}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"v", ",", "m", ",", "mo"}], "}"}]}], "]"}]}], 
+  TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"v", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"1.`", " ", 
+         SqrtBox[
+          RowBox[{
+           RowBox[{"-", "0.8836`"}], "+", 
+           RowBox[{"1.`", " ", 
+            SuperscriptBox["Ep", "2"]}]}]]}], "Ep"]}]}], ",", 
+     RowBox[{"m", "\[Rule]", "Ep"}], ",", 
+     RowBox[{"mo", "\[Rule]", "0.94`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"v", "\[Rule]", 
+      FractionBox[
+       SqrtBox[
+        RowBox[{
+         RowBox[{"-", "0.8836`"}], "+", 
+         RowBox[{"1.`", " ", 
+          SuperscriptBox["Ep", "2"]}]}]], "Ep"]}], ",", 
+     RowBox[{"m", "\[Rule]", "Ep"}], ",", 
+     RowBox[{"mo", "\[Rule]", "0.94`"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6205674343782377`*^9, 3.620567558289254*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Obliczenie czasu przelotu w ukladzie zwiazanym z Ziemia (\"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox["\[Tau]", TraditionalForm]]],
+ StyleBox["\") i w ukladzie zwiazanym z protonem (\"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Tau]", "o"], TraditionalForm]]],
+ StyleBox["\").",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Tau]", "=", 
+    FractionBox["l", 
+     RowBox[{"v", "/.", 
+      RowBox[{"r1", "[", 
+       RowBox[{"[", 
+        RowBox[{"2", ",", "1"}], "]"}], "]"}]}]]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"\[Tau]o", "=", 
+    RowBox[{
+     RowBox[{"\[Tau]", "\[Times]", 
+      SqrtBox[
+       RowBox[{"1", "-", 
+        FractionBox[
+         SuperscriptBox["v", "2"], 
+         SuperscriptBox["c", "2"]]}]]}], "/.", 
+     RowBox[{"r1", "[", 
+      RowBox[{"[", "2", "]"}], "]"}]}]}], ";"}], TraditionalForm]}], "Input",
+ CellChangeTimes->{{3.620567548024436*^9, 3.6205675488824377`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sporzadzenie wykresu obrazujacego zaleznosc czasu \
+przelotu protonu przez Galaktyke w ukladzie zwiazanym z Ziemia od energi \
+protonu.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"Plot", "[", 
+   RowBox[{"\[Tau]", ",", 
+    RowBox[{"{", 
+     RowBox[{"Ep", ",", "5", ",", "50"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"TextStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+       RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}], ",", 
+       RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+    "\[IndentingNewLine]", " ", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+        RowBox[{"Thickness", "[", "0.006", "]"}]}], "}"}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<Ep  [GeV]\>\"", ",", "\"\<\[Tau] [lata]\>\""}], "}"}]}]}], 
+   "]"}], TraditionalForm]], "Input",
+ CellChangeTimes->{3.6205674054401875`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sporzadzenie wykresu obrazujacego zaleznosc czasu \
+przelotu protonu przez Galaktyke w ukladzie zwiazanym z protonem od energi \
+protonu.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"Plot", "[", 
+   RowBox[{"\[Tau]o", ",", 
+    RowBox[{"{", 
+     RowBox[{"Ep", ",", "5", ",", "50"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"TextStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+       RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}], ",", 
+       RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+    "\[IndentingNewLine]", " ", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+        RowBox[{"Thickness", "[", "0.006", "]"}]}], "}"}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<Ep  [GeV]\>\"", ",", 
+       "\"\<\!\(\*SubscriptBox[\(\[Tau]\), \(o\)]\) [lata]\>\""}], "}"}]}]}], 
+   "]"}], TraditionalForm]], "Input",
+ CellChangeTimes->{3.6205674083105927`*^9}]
+}, Open  ]]
+},
+WindowSize->{1264, 889},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+DockedCells->FEPrivate`FrontEndResource[
+ "FEExpressions", "CompatibilityToolbar"],
+Magnification->1.25,
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 428, 12, 71, "Subsection"],
+Cell[1010, 36, 127, 4, 35, "Input"],
+Cell[1140, 42, 218, 7, 35, "Input"],
+Cell[1361, 51, 249, 8, 48, "Input"],
+Cell[1613, 61, 244, 8, 37, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1894, 74, 795, 20, 113, "Subsection"],
+Cell[CellGroupData[{
+Cell[2714, 98, 668, 22, 91, "Input"],
+Cell[3385, 122, 861, 27, 67, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4295, 155, 441, 13, 46, "Subsection"],
+Cell[4739, 170, 675, 22, 140, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5451, 197, 239, 4, 69, "Subsection"],
+Cell[5693, 203, 969, 25, 102, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6699, 233, 241, 4, 69, "Subsection"],
+Cell[6943, 239, 1018, 27, 102, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

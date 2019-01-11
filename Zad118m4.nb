@@ -1,0 +1,348 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     10022,        338]
+NotebookOptionsPosition[      8915,        295]
+NotebookOutlinePosition[      9362,        313]
+CellTagsIndexPosition[      9319,        310]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Wprowadzenie wartosci dla stalej grawitacyjnej \"G\".",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], ";"}], 
+  TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"G", "=", 
+     RowBox[{"6.67", "\[Times]", 
+      SuperscriptBox["10", 
+       RowBox[{"-", "11"}]]}]}], ";"}], "      ", 
+   StyleBox[
+    RowBox[{"(*", " ", 
+     FractionBox[
+      RowBox[{"N", " ", 
+       SuperscriptBox["m", "2"]}], 
+      RowBox[{
+       SuperscriptBox["kg", "2"], " "}]], " ", "*)"}],
+    FontColor->GrayLevel[0.666667]]}], TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Wypisanie wzorow na energie kinetyczna  \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["E", "k"], TraditionalForm]]],
+ StyleBox["\" i  potencjalna \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["E", "pR"], TraditionalForm]]],
+ StyleBox["\" pocisku o masie m. \"v\" - predkosc pocisku, \n\"M\", \"R\" - \
+odpowiednio masa i promien planety. Podstawienie wartosci zero dla energii \
+potencjalnej \npocisku w nieskonczonosci \"",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["E", "\[Infinity]"], TraditionalForm]]],
+ StyleBox["\".",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"Ek", "=", 
+    FractionBox[
+     RowBox[{"m", "\[Times]", 
+      SuperscriptBox["v", "2"]}], "2"]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"EpR", "=", 
+    RowBox[{
+     RowBox[{"-", "G"}], "\[Times]", 
+     FractionBox[
+      RowBox[{"m", "\[Times]", "M"}], "R"]}]}], ";"}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{"E\[Infinity]", "=", "0"}], ";"}], TraditionalForm]}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Wykorzystanie rownania bedacego matematycznym zapisem \
+bilansu energii do obliczenia drugiej predkosci \nkosmicznej.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"r1", "=", 
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Ek", "+", "EpR"}], "==", "E\[Infinity]"}], ",", "v"}], "]"}]}],
+   TraditionalForm]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"v", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"0.000011549891774384728`", " ", 
+         SqrtBox["M"]}], 
+        SqrtBox["R"]]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"v", "\[Rule]", 
+      FractionBox[
+       RowBox[{"0.000011549891774384728`", " ", 
+        SqrtBox["M"]}], 
+       SqrtBox["R"]]}], "}"}]}], "}"}], TraditionalForm]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Zdefiniowanie funkcji predkosci zaleznej od promienia i masy \
+planety ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\"v[R_, M_]\"",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" jako fizyczne\n rozwiazanie rownania \"r1\".",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ PageWidth->Infinity,
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"v", "[", 
+     RowBox[{"R_", ",", "M_"}], "]"}], "=", 
+    RowBox[{"v", "/.", 
+     RowBox[{"r1", "[", 
+      RowBox[{"[", 
+       RowBox[{"2", ",", "1"}], "]"}], "]"}]}]}], ";"}], 
+  TraditionalForm]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Sporzadzenie wykresu obrazujacego zaleznosc  drugiej \
+predkosci kosmicznej od masy planety przy ustalonym \npromieniu R = 6370 km.",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{"v", "[", 
+       RowBox[{"R", ",", 
+        RowBox[{"M", "\[Times]", 
+         SuperscriptBox["10", "24"]}]}], "]"}], 
+      SuperscriptBox["10", "3"]], "/.", 
+     RowBox[{"R", "\[Rule]", 
+      RowBox[{"6370", "\[Times]", 
+       SuperscriptBox["10", "3"]}]}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"M", ",", "6", ",", "100"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"TextStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+       RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}], ",", 
+       RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"PlotLabel", "\[Rule]", 
+     RowBox[{"StyleForm", "[", 
+      RowBox[{"\"\<R = 6370 km\>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Helvetica\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"FontSlant", "\[Rule]", "\"\<Plain\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"FontWeight", " ", "\[Rule]", "\"\<Bold\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"FontSize", "\[Rule]", "10"}]}], "]"}]}], ",", 
+    "\[IndentingNewLine]", " ", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+        RowBox[{"Thickness", "[", "0.006", "]"}]}], "}"}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<M [\!\(\*SuperscriptBox[\(10\), \(\(\\\ \)\(24\)\(\\\ \)\)]\)kg]\>\
+\"", ",", "\"\<v [ \!\(\*FractionBox[\(km\), \(s\)]\)]\>\""}], "}"}]}]}], 
+   "]"}], TraditionalForm]], "Input",
+ CellChangeTimes->{3.6205678193089094`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Sporzadzenie wykresu obrazujacego zaleznosc  drugiej predkosci \
+kosmicznej od promienia planety przy ustalonej \nmasie M = 6\[Times]",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["10", "24"], " "}], TraditionalForm]]],
+ StyleBox["kg.",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsection",
+ FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{"v", "[", 
+       RowBox[{
+        RowBox[{"R", "\[Times]", 
+         SuperscriptBox["10", "3"]}], ",", "M"}], "]"}], 
+      SuperscriptBox["10", "3"]], "/.", 
+     RowBox[{"M", "\[Rule]", 
+      RowBox[{"6", "\[Times]", 
+       SuperscriptBox["10", "24"]}]}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"R", ",", "6370", ",", "20000"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"TextStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Times\>\""}], ",", 
+       RowBox[{"FontSlant", "\[Rule]", "\"\<Italic\>\""}], ",", 
+       RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"PlotLabel", "\[Rule]", 
+     RowBox[{"StyleForm", "[", 
+      RowBox[{
+      "\"\<M = 6\[Times]\!\(\*SuperscriptBox[\(10\), \(24\)]\) kg\>\"", ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Helvetica\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"FontSlant", "\[Rule]", "\"\<Plain\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"FontWeight", " ", "\[Rule]", "\"\<Bold\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"FontSize", "\[Rule]", "10"}]}], "]"}]}], ",", 
+    "\[IndentingNewLine]", " ", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+        RowBox[{"Thickness", "[", "0.006", "]"}]}], "}"}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<R [km]\>\"", ",", 
+       "\"\<v [ \!\(\*FractionBox[\(km\), \(s\)]\)]\>\""}], "}"}]}]}], "]"}], 
+  TraditionalForm]], "Input",
+ CellChangeTimes->{3.6205678218517137`*^9}]
+}, Open  ]]
+},
+WindowSize->{1264, 889},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+DockedCells->FEPrivate`FrontEndResource[
+ "FEExpressions", "CompatibilityToolbar"],
+Magnification->1.25,
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 211, 4, 46, "Subsection"],
+Cell[793, 28, 127, 4, 35, "Input"],
+Cell[923, 34, 435, 15, 55, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1395, 54, 787, 23, 94, "Subsection"],
+Cell[2185, 79, 510, 18, 142, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2732, 102, 275, 5, 69, "Subsection"],
+Cell[CellGroupData[{
+Cell[3032, 111, 208, 7, 35, "Input"],
+Cell[3243, 120, 465, 16, 64, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3757, 142, 387, 11, 69, "Subsection"],
+Cell[4147, 155, 271, 10, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4455, 170, 235, 3, 69, "Subsection"],
+Cell[4693, 175, 1882, 48, 275, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6612, 228, 390, 11, 69, "Subsection"],
+Cell[7005, 241, 1894, 51, 282, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
