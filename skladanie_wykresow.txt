@@ -1,0 +1,60 @@
+
+Fq=(q *qo)/(4*\[Pi]*\[Epsilon]o*r^2)
+Fo=(m*v^2)/r;
+qo=m*qw;
+
+A=Solve[Fq==Fo,v];
+
+1)rys1=Plot[v/.A[[2,1]]/.q->0.2 *10^-7,{r,0.1,0.2},
+PlotStyle->(RGBColor[1,0,0]	Thickness[0.006]
+
+),
+DisplayFunction->Identity];
+rys2=Plot[v/.A[[2,1]]/.q->0.5 *10^-7,{r,0.1,0.2},
+PlotStyle->(RGBColor[0,1,0]	Thickness[0.006]
+
+),
+DisplayFunction->Identity];
+rys3=Plot[v/.A[[2,1]]/.q->1.0 *10^-7,{r,0.1,0.2},
+PlotStyle->(RGBColor[0,0,1]	Thickness[0.006]
+
+),
+DisplayFunction->Identity]
+
+
+Show[rys1,rys2,rys3,DisplayFunction->$DisplayFunction, PlotRange->All,
+TextStyle->{FontFamily->"Times",FontSlant->"Italic",FontSize->12},
+AxesLabel->{"r [m]","v [m/s] "},
+Prolog->{Text[StyleForm["q = 0.2 * 10^-7 C",FontColor->RGBColor[1,0,0]], //indeksy nad krzywymi
+Scaled[{0.77,0.15}]],
+Text[StyleForm["q = 0.5 * 10^-7 C",FontColor->RGBColor[0,1,0]],
+Scaled[{0.33,0.60}]],
+Text[StyleForm["q = 1.0 * 10^-7 C",FontColor->RGBColor[0,0,1]],Scaled[{0.77,0.74}]]}] //lokalizacja tekstu
+
+//Scaled liczone jest od poczatku ukladu wspolrzednych scaled[x%,y%]
+
+
+
+zad.2
+ClearAll["Global`*"];
+
+Subscript[\[Epsilon], 0]=8.85*10^-12 (*F/m*);
+
+e = 1.6*10^-19(*C*);
+
+
+
+Subscript[F, c]=(Z*e^2)/(4*\[Pi]*Subscript[\[Epsilon], 0]*r^2);
+
+
+
+
+
+
+rys1=Plot[Subscript[F, c]/.Z->1,{r,0.1*10^-13,0.2*10^-13},PlotStyle->{RGBColor[1,0,0] ,Thickness[0.006]},DisplayFunction->Identity];
+rys2=Plot[Subscript[F, c]/.Z->6,{r,0.1*10^-13,0.2*10^-13},PlotStyle->{RGBColor[0,1,0] ,Thickness[0.006]},DisplayFunction->Identity];
+rys3=Plot[Subscript[F, c]/.Z->8,{r,0.1*10^-13,0.2*10^-13},PlotStyle->{RGBColor[0,0,1], Thickness[0.006]},DisplayFunction->Identity];
+
+
+Show[rys1,rys2,rys3,DisplayFunction->$DisplayFunction,PlotRange->All,TextStyle->{FontFamily->"Times",FontSlant->"Italic",FontSize->14},AxesLabel->{"r[m]","Subscript[F, c][N]"},Prolog->{Text[StyleForm["Z=1",FontColor->RGBColor[1,0,0]], Scaled[{0.6,0.12}]],Text[StyleForm["Z=6",FontColor->RGBColor[0,1,0]],Scaled[{0.2,0.3}]],Text[StyleForm["Z=8",FontColor->RGBColor[0,0,1]],Scaled[{0.4,0.64}]]}]
+
